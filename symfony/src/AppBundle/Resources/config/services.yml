@@ -1,0 +1,15 @@
+parameters:
+  lenguas.trabajos.class: AppBundle\Service\TrabajosService
+  lenguas.documentos.class: AppBundle\Service\DocumentoService
+
+
+services:
+    lenguas.trabajos:
+        class: "%lenguas.trabajos.class%"
+        arguments: ["@doctrine.orm.entity_manager", "@logger"]
+        lazy: true
+        public: true
+    lenguas.documentos:
+        class: "%lenguas.documentos.class%"
+        arguments: ["@doctrine.orm.entity_manager", "@logger"]
+        public: true        

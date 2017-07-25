@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}app_title{% endtrans %} | {{ documento.title }}{% endblock %}
+
+{% block body %}
+<!--page title start-->
+<section class="page-title ptb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="index.php">Monografías</a></li>
+                    <li class="active">{{ documento.title }}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!--page title end-->
+
+
+<section class="section-padding">
+    <div class="container">
+
+      <div class="mb-80">
+          <img src="{{ asset('assets/img/Tapa-Documentos-siglo-XVIII.jpg')}}" class="doc-libros">
+      </div>
+
+      <div class="mb-80">
+      	{{ documento.body | raw }}
+          <a href="documentos/Documentos-para-la-historia-del-esp-en-el-Uruguay-Siglo-XVIII.pdf" target="blank" class="waves-effect waves-light btn red red-left">ver texto completo</a>
+          <a href="documentos/Normas-de-transcripcion-2012-3.pdf" class="normas-transcripcion" target="blank">Ver Normas de transcripción</a></p>
+      </div>
+
+
+    </div><!-- /.container -->
+</section>
+{% endblock %}

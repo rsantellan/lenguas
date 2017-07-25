@@ -86,16 +86,16 @@
 
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
-                            <li><a href="index.php" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">Inicio</a></li>
+                            <li><a href="{{ path('homepage') }}" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">Inicio</a></li>
 
                             <li>
-                                <a href="publicaciones.php" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Publicaciones</a></li>
+                                <a href="{{ path('publicaciones') }}" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Publicaciones</a></li>
 
                             <li>
                                 <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>Monografías</a>
                                 <ul class="dropdown">
-                                    <li><a href="trabajos_grado.php" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">Trabajos de Grado</a></li>
-                                    <li><a href="trabajos_posgrado.php" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">Trabajos de Posgrado</a></li>
+                                    <li><a href="{{ path('monografiagrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">Trabajos de Grado</a></li>
+                                    <li><a href="{{ path('monografiaposgrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">Trabajos de Posgrado</a></li>
                                 </ul>
                             </li>
 
@@ -110,11 +110,7 @@
                             </li>
 
                             <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Documentos</a>
-                                <ul class="dropdown">
-                                    <li><a href="doc_SXVIII.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_SXVIII' %}current{% endif %}">Documentos siglo XVIII</a></li>
-                                    <li><a href="doc_XIX.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX' %}current{% endif %}">Documentos siglo XIX</a></li>
-                                    <li><a href="doc_XIX_pt.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX_pt' %}current{% endif %}">Documentos portugués siglo XIX</a></li>
-                                </ul>
+                                {{ render(controller('AppBundle:Default:menuDocumentos')) }}
                             </li>
 
                             <li><a href="sitios-interes.php" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>

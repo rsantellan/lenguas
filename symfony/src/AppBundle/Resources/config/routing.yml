@@ -2,6 +2,38 @@ app_admin_publicaciones:
     resource: "@AppBundle/Resources/config/routing/publicaciones.yml"
     prefix:   /admin/publicaciones
 
+app_admin_monografiagrado:
+    resource: "@AppBundle/Resources/config/routing/monografiagrado.yml"
+    prefix:   /admin/monografiagrado
+
+app_admin_monografiaposgrado:
+    resource: "@AppBundle/Resources/config/routing/monografiaposgrado.yml"
+    prefix:   /admin/monografiaposgrado
+
+app_admin_documentos:
+    resource: "@AppBundle/Resources/config/routing/documento.yml"
+    prefix:   /admin/documentos
+
 homepage:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
+
+publicaciones:
+    path:     /publicaciones.html
+    defaults: { _controller: AppBundle:Default:publicaciones }
+
+monografiagrado:
+    path:     /monografias-grado.html
+    defaults: { _controller: AppBundle:Default:monografiagrado }
+
+monografiaposgrado:
+    path:     /monografias-posgrado.html
+    defaults: { _controller: AppBundle:Default:monografiaposgrado }
+
+descargar_archivo:
+    path:     /{id}/descargar.html
+    defaults: { _controller: AppBundle:Default:downloadOriginalFile }
+
+documento:
+    path:     /documento/{slug}.html
+    defaults: { _controller: AppBundle:Default:documento }

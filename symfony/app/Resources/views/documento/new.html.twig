@@ -1,0 +1,44 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block javascripts %}
+<script src="{{ asset('bundles/maithcommonadmin/js/ckeditor/ckeditor.js') }}"></script>
+{{ include('MaithCommonAdminBundle:Wyswyg:_addJsInitializerTextAreas.html.twig') }}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+        <section class="panel panel-color">
+        <header class="panel-heading text-uppercase"><i class="fa fa-pencil-square-o"></i>Crear Documento</header>
+        <div class="panel-body">
+            {{ form_start(form, {'attr' : { 'role' : 'form'} }) }}    
+            <div class="form-group">
+                {{ form_errors(form.title) }}
+                <label for="{{ form.title.vars.id }}">Titulo</label>
+                {{ form_widget(form.title, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_errors(form.body) }}
+                <label for="{{ form.body.vars.id }}">Cuerpo</label>
+                {{ form_widget(form.body, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_errors(form.orden) }}
+                <label for="{{ form.orden.vars.id }}">Orden</label>
+                {{ form_widget(form.orden, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_rest(form) }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-default"><i class="fa fa-save"></i>Guardar</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+        </section>
+    </div>
+    <div class="col-lg-8">
+        <a href="{{ path('admin_documentos_index') }}" class="btn btn-success" style="float: left; margin: 0!important;">
+            <i class="fa fa-arrow-left"></i>Volver al listado
+        </a>
+    </div>
+</div>
+{% endblock %}

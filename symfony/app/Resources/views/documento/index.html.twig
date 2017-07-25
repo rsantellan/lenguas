@@ -1,0 +1,43 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block title %}Administrar Documentos{% endblock %}
+
+{% block body %}
+<section class="panel panel-color">
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Documentos</header>
+  <div class="panel-body">
+    <div class="table-responsive no-border">
+        <table class="table table-bordered table-striped mg-t datatable dataTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Orden</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for documento in documentos %}
+            <tr>
+                <td>{{ documento.title }}</td>
+                <td>{{ documento.orden }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_documentos_edit', { 'id': documento.id }) }}" class="btn btn-success">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_documentos_new') }}" class="btn btn-info">Crear documento</a>
+        </li>
+    </ul>
+    </div>
+  </div>
+</section>    
+{% endblock %}

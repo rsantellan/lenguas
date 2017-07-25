@@ -56,7 +56,6 @@ $(document).ready(function () {
                 <tr>
                     <th>Autores</th>
                     <th>Description</th>
-                    <th>Year</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -65,11 +64,10 @@ $(document).ready(function () {
                 <tr>
                     <td>{{ trabajo.authors }}</td>
                     <td>{{ trabajo.description }}</td>
-                    <td>{{ trabajo.year }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('admin_publicaciones_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
+                                <a href="{{ path('admin_monografiaposgrado_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
                             </li>
                         </ul>
                     </td>
@@ -80,7 +78,7 @@ $(document).ready(function () {
 
         <ul>
             <li>
-                <a href="{{ path('admin_publicaciones_new') }}" class="btn btn-info">Crear publicación</a>
+                <a href="{{ path('admin_monografiaposgrado_new') }}" class="btn btn-info">Crear publicación</a>
             </li>
         </ul>
     </div>

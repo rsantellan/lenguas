@@ -28,11 +28,6 @@
                 <label for="{{ edit_form.description.vars.id }}">Descripción</label>
                 {{ form_widget(edit_form.description, {'attr' : {'class' : 'form-control'}}) }}
             </div>
-            <div class="form-group">
-                {{ form_errors(edit_form.year) }}
-                <label for="{{ edit_form.year.vars.id }}">Año</label>
-                {{ form_widget(edit_form.year, {'attr' : {'class' : 'form-control'}}) }}
-            </div>
             {{ form_rest(edit_form) }}
             <div class="form-group">
                 <button type="submit" class="btn btn-default"><i class="fa fa-save"></i>Guardar</button>
@@ -48,7 +43,7 @@
 </div>
 <div class="row">
     <div class="col-lg-8">
-        <a href="{{ path('admin_publicaciones_index') }}" class="btn btn-success" style="float: left; margin: 0!important;">
+        <a href="{{ path('admin_monografiagrado_index') }}" class="btn btn-success" style="float: left; margin: 0!important;">
             <i class="fa fa-arrow-left"></i>Volver al listado
         </a>
             <div class="pull-right">  

@@ -7,10 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Publicaciones controller.
+ * Monografiaposgrado controller.
  *
  */
-class PublicacionesController extends Controller
+class MonografiaposgradoController extends Controller
 {
     /**
      * Lists all trabajo entities.
@@ -19,8 +19,8 @@ class PublicacionesController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $trabajos = $this->get('lenguas.trabajos')->retrieveAllPublicaciones();
-        return $this->render('publicaciones/index.html.twig', array(
+        $trabajos = $this->get('lenguas.trabajos')->retrieveAllMonografiasPosgrado();
+        return $this->render('monografiaposgrado/index.html.twig', array(
             'trabajos' => $trabajos,
         ));
     }
@@ -32,8 +32,8 @@ class PublicacionesController extends Controller
     public function newAction(Request $request)
     {
         $trabajo = new Trabajo();
-        $trabajo->setType(Trabajo::PUBLICACION);
-        $form = $this->createForm('AppBundle\Form\PublicacionType', $trabajo);
+        $trabajo->setType(Trabajo::MONOGRAFIAPOSGRADO);
+        $form = $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -41,10 +41,10 @@ class PublicacionesController extends Controller
             $em->persist($trabajo);
             $em->flush();
 
-            return $this->redirectToRoute('admin_publicaciones_edit', array('id' => $trabajo->getId()));
+            return $this->redirectToRoute('admin_monografiaposgrado_edit', array('id' => $trabajo->getId()));
         }
 
-        return $this->render('publicaciones/new.html.twig', array(
+        return $this->render('monografiaposgrado/new.html.twig', array(
             'trabajo' => $trabajo,
             'form' => $form->createView(),
         ));
@@ -58,7 +58,7 @@ class PublicacionesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($trabajo);
 
-        return $this->render('publicaciones/show.html.twig', array(
+        return $this->render('monografiaposgrado/show.html.twig', array(
             'trabajo' => $trabajo,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -71,16 +71,16 @@ class PublicacionesController extends Controller
     public function editAction(Request $request, Trabajo $trabajo)
     {
         $deleteForm = $this->createDeleteForm($trabajo);
-        $editForm = $this->createForm('AppBundle\Form\PublicacionType', $trabajo);
+        $editForm = $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_publicaciones_edit', array('id' => $trabajo->getId()));
+            return $this->redirectToRoute('admin_monografiaposgrado_edit', array('id' => $trabajo->getId()));
         }
 
-        return $this->render('publicaciones/edit.html.twig', array(
+        return $this->render('monografiaposgrado/edit.html.twig', array(
             'trabajo' => $trabajo,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -102,7 +102,7 @@ class PublicacionesController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_publicaciones_index');
+        return $this->redirectToRoute('admin_monografiaposgrado_index');
     }
 
     /**
@@ -115,7 +115,7 @@ class PublicacionesController extends Controller
     private function createDeleteForm(Trabajo $trabajo)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_publicaciones_delete', array('id' => $trabajo->getId())))
+            ->setAction($this->generateUrl('admin_monografiaposgrado_delete', array('id' => $trabajo->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -48,7 +48,7 @@ $(document).ready(function () {
 {% endblock %}
 {% block body %}
 <section class="panel panel-color">
-  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Publicaciones</header>
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Monografias Grado</header>
   <div class="panel-body">
     <div class="table-responsive no-border">
         <table class="table table-bordered table-striped mg-t datatable dataTable">
@@ -56,7 +56,6 @@ $(document).ready(function () {
                 <tr>
                     <th>Autores</th>
                     <th>Description</th>
-                    <th>Year</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -65,11 +64,10 @@ $(document).ready(function () {
                 <tr>
                     <td>{{ trabajo.authors }}</td>
                     <td>{{ trabajo.description }}</td>
-                    <td>{{ trabajo.year }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('admin_publicaciones_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
+                                <a href="{{ path('admin_monografiagrado_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
                             </li>
                         </ul>
                     </td>
@@ -80,7 +78,7 @@ $(document).ready(function () {
 
         <ul>
             <li>
-                <a href="{{ path('admin_publicaciones_new') }}" class="btn btn-info">Crear publicación</a>
+                <a href="{{ path('admin_monografiagrado_new') }}" class="btn btn-info">Crear monografia grado</a>
             </li>
         </ul>
     </div>

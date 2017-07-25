@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\Role\RoleInterface;
+use Symfony\Component\Security\Core\Role\Role as SymfonyRole;
 
 /**
  * Role.
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\Role\RoleInterface;
  * @ORM\Entity
  * @ORM\Table(name="lenguas_role")
  */
-class Role implements RoleInterface
+class Role extends SymfonyRole
 {
     /**
      * @var int

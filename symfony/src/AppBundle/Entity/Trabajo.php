@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Trabajo
 {
+    const PUBLICACION = 1;
+    const MONOGRAFIAGRADO = 2;
+    const MONOGRAFIAPOSGRADO = 3;
+
     /**
      * @var int
      *
@@ -24,16 +28,9 @@ class Trabajo
     /**
      * @var string
      *
-     * @ORM\Column(name="surname", type="string", length=255)
+     * @ORM\Column(name="authors", type="string", length=255)
      */
-    private $surname;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
+    private $authors;
 
     /**
      * @var string
@@ -67,51 +64,27 @@ class Trabajo
     }
 
     /**
-     * Set surname
+     * Set authors
      *
-     * @param string $surname
+     * @param string $authors
      *
      * @return Trabajo
      */
-    public function setSurname($surname)
+    public function setAuthors($authors)
     {
-        $this->surname = $surname;
+        $this->authors = $authors;
 
         return $this;
     }
 
     /**
-     * Get surname
+     * Get authors
      *
      * @return string
      */
-    public function getSurname()
+    public function getAuthors()
     {
-        return $this->surname;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Trabajo
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
+        return $this->authors;
     }
 
     /**
@@ -185,4 +158,14 @@ class Trabajo
     {
         return $this->year;
     }
+
+    public function getfullClassName()
+    {
+        return get_class($this);
+    }
+
+    public function retrieveAlbums()
+    {
+      return array("files");
+    }    
 }

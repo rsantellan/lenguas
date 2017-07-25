@@ -15,3 +15,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/web/upload/*
+!web/upload/.gitkeep
+/web/wyswyg/*
+!web/wyswyg/.gitkeep
