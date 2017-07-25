@@ -19,6 +19,20 @@
             "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
         ]
     },
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/rsantellan/symfony2-maith-admin.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/rsantellan/symfony2-maith-images.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/rsantellan/symfony2-maith-translator.git"
+        }
+    ],    
     "require": {
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
@@ -30,7 +44,17 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.3.*",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        
+        "stof/doctrine-extensions-bundle": "1.2.*",
+        "doctrine/doctrine-fixtures-bundle": "2.*",
+        "doctrine/data-fixtures": "1.*",
+        "genemu/form-bundle": "^3.0@dev",
+        "imagine/Imagine": "dev-master",
+        
+        "Maith/Common/AdminBundle": "dev-branch3",
+        "Maith/Common/ImageBundle": "dev-branch3",
+        "Maith/Common/TranslatorBundle": "dev-branch3"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

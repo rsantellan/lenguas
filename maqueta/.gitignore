@@ -1,0 +1,6 @@
+/documentos/*
+!documentos/.gitkeep
+/publicaciones/*
+!publicaciones/.gitkeep
+/monogrfias/*
+!monogrfias/.gitkeep
