@@ -161,5 +161,28 @@ class Trabajo
     {
         return $this->type;
     }
-}
 
+    /**
+     * Set year
+     *
+     * @param integer $year
+     *
+     * @return Trabajo
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    /**
+     * Get year
+     *
+     * @return integer
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+}
