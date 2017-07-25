@@ -1,13 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="lauranozar.com">
+        <meta name="author" content="rodrigosantellan.com">
+        <title>{% block title %}{% trans %}app_title{% endtrans %} Historia lingüística del Uruguay{% endblock %}</title>
+
+        <!--  favicon -->
+        <link rel="shortcut icon" href="{{ asset('assets/img/ico/favicon.png') }}">
+        <!--  apple-touch-icon -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('assets/img/ico/apple-touch-icon-144-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('assets/img/ico/apple-touch-icon-114-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('assets/img/ico/apple-touch-icon-72-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/img/ico/apple-touch-icon-57-precomposed.png') }}">
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- FontAwesome CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+
+        <link href="{{ asset('assets/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- Material Icons CSS -->
+        <link href="{{ asset('assets/fonts/iconfont/material-icons.css') }}" rel="stylesheet">
+        <!-- magnific-popup -->
+        <link href="{{ asset('assets/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+        <!-- materialize -->
+        <link href="{{ asset('assets/materialize/css/materialize.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- shortcodes -->
+        <link href="{{ asset('assets/css/shortcodes/shortcodes.css') }}" rel="stylesheet">
+        <!-- Style CSS -->
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        {% block stylesheets %}
+
+        {% endblock %}
     </head>
     <body>
+        <!--header start-->
+        <header id="header" class="tt-nav transparent-header" >
+
+            <div class="header-sticky light-header">
+
+                <div class="container">
+
+                    <div class="search-wrapper">
+                        <div class="search-trigger pull-right">
+                            <div class='search-btn'></div>
+                            <i class="material-icons">&#xE8B6;</i>
+                        </div>
+
+                        <!-- Modal Search Form -->
+                        <i class="search-close material-icons">&#xE5CD;</i>
+                        <div class="search-form-wrapper">
+                            <form action="#" class="white-form">
+                                <div class="input-field">
+                                    <input type="text" name="search" id="search">
+                                    <label for="search" class="">Buscador...</label>
+                                </div>
+                                <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
+                                
+                            </form>
+                        </div>
+                    </div><!-- /.search-wrapper -->
+                
+                    <div id="materialize-menu" class="menuzord">
+
+                        <!--logo start
+                        <a href="index.html" class="logo-brand">
+                            <img class="retina" src="assets/img/logo.png" alt=""/>
+                        </a>
+                        logo end-->
+
+                        <!--mega menu start-->
+                        <ul class="menuzord-menu pull-right">
+                            <li><a href="index.php" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">Inicio</a></li>
+
+                            <li>
+                                <a href="publicaciones.php" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Publicaciones</a></li>
+
+                            <li>
+                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>Monografías</a>
+                                <ul class="dropdown">
+                                    <li><a href="trabajos_grado.php" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">Trabajos de Grado</a></li>
+                                    <li><a href="trabajos_posgrado.php" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">Trabajos de Posgrado</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
+                                <ul class="dropdown">
+                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'indigenas' %}current{% endif %}">Repositorios lexicográficos</a></li>
+                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios independientes</a></li>
+                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios de voces de origen africano</a></li>
+                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios riograndenses</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Documentos</a>
+                                <ul class="dropdown">
+                                    <li><a href="doc_SXVIII.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_SXVIII' %}current{% endif %}">Documentos siglo XVIII</a></li>
+                                    <li><a href="doc_XIX.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX' %}current{% endif %}">Documentos siglo XIX</a></li>
+                                    <li><a href="doc_XIX_pt.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX_pt' %}current{% endif %}">Documentos portugués siglo XIX</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="sitios-interes.php" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>
+
+                            <li><a href="#" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
+                        </ul>
+                        <!--mega menu end-->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <!--footer 2 start -->
+        <footer class="footer footer-two">
+            <div class="primary-footer brand-bg">
+                <div class="container">
+
+                    <a href="#top" class="page-scroll btn-floating btn-large pink back-top waves-effect waves-light tt-animate btt" data-section="#top">
+                      <i class="material-icons">&#xE316;</i>
+                    </a>
+
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                          <div class="footer-logo">
+                            <a href="http://www.comunicacion.edu.uy/" target="blank"><img src="{{ asset('assets/img/logo-fic.png') }}" srcset="assets/img/logo-fic-hd.png 2x" alt=""></a>
+                            <a href="http://www.fhuce.edu.uy/" target="blank"><img src="{{ asset('assets/img/logo-humanidades.png') }}" srcset="assets/img/logo-humanidades-hd.png 2x" alt=""></a>
+                            <a href="http://www.universidad.edu.uy/" target="blank"><img src="{{ asset('assets/img/logo-udelar.png') }}" srcset="assets/img/logo-udelar-hd.png 2x" alt=""></a>
+                          </div>
+                      </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.primary-footer -->
+
+            <div class="secondary-footer brand-bg darken-2">
+                <div class="container">
+                    <span class="copy-text"><strong>Responsables ></strong> <a href="virginia.bertolotti@fic.edu.uy">Virginia Bertolotti</a> &nbsp;  | &nbsp;  <a href="mailto:collmagdalena@gmail.com">Magdalena Coll</a></br><strong><a href="colaboradores.php">COLABORADORES</a></span>
+
+                </div><!-- /.container -->
+            </div><!-- /.secondary-footer -->
+        </footer>
+        <!--footer 2 end-->
+        <!-- Preloader -->
+        <div id="preloader">
+          <div class="preloader-position"> 
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Preloader -->        
+        {% block javascripts %}
+        <!-- jQuery -->
+        <script src="{{ asset('assets/js/jquery-2.1.3.min.js') }}"></script>
+        <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/materialize/js/materialize.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.sticky.min.js') }}"></script>
+        <script src="{{ asset('assets/js/smoothscroll.min.js') }}"></script>
+        <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.inview.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.shuffle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/menuzord.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap-tabcollapse.min.js') }}"></script>
+        
+        <script src="{{ asset('assets/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

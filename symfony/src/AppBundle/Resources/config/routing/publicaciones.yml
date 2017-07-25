@@ -1,0 +1,24 @@
+admin_publicaciones_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Publicaciones:index" }
+    methods:  GET
+
+admin_publicaciones_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Publicaciones:show" }
+    methods:  GET
+
+admin_publicaciones_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Publicaciones:new" }
+    methods:  [GET, POST]
+
+admin_publicaciones_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Publicaciones:edit" }
+    methods:  [GET, POST]
+
+admin_publicaciones_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Publicaciones:delete" }
+    methods:  DELETE

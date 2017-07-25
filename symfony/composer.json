@@ -46,6 +46,10 @@
         "symfony/symfony": "3.3.*",
         "twig/twig": "^1.0||^2.0",
         
+        "friendsofsymfony/user-bundle": "2.0.*",
+        "symfony/security-bundle": "3.0.*",
+        "ocramius/proxy-manager": "^1.0",
+        
         "stof/doctrine-extensions-bundle": "1.2.*",
         "doctrine/doctrine-fixtures-bundle": "2.*",
         "doctrine/data-fixtures": "1.*",

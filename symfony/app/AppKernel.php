@@ -15,6 +15,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            /** Installed **/
+            new FOS\UserBundle\FOSUserBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+
+            /** Mine **/
+            new Maith\Common\AdminBundle\MaithCommonAdminBundle(),
+            new Maith\Common\ImageBundle\MaithCommonImageBundle(),
+            new Maith\Common\TranslatorBundle\MaithCommonTranslatorBundle(),
+            /** App **/            
             new AppBundle\AppBundle(),
         ];
 

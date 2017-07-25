@@ -1,0 +1,56 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block title %}AppBundle:AdminFacturas:showOk{% endblock %}
+
+{% block body %}
+<section class="panel panel-color">
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Publicaciones</header>
+  <div class="panel-body">
+    <div class="table-responsive no-border">
+        <table class="table table-bordered table-striped mg-t datatable dataTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Surname</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for trabajo in trabajos %}
+                <tr>
+                    <td><a href="{{ path('admin_publicaciones_show', { 'id': trabajo.id }) }}">{{ trabajo.id }}</a></td>
+                    <td>{{ trabajo.surname }}</td>
+                    <td>{{ trabajo.name }}</td>
+                    <td>{{ trabajo.description }}</td>
+                    <td>{{ trabajo.type }}</td>
+                    <td>{{ trabajo.year }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('admin_publicaciones_show', { 'id': trabajo.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('admin_publicaciones_edit', { 'id': trabajo.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('admin_publicaciones_new') }}">Create a new trabajo</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+    
+{% endblock %}

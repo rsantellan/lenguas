@@ -1,0 +1,7 @@
+app_admin_publicaciones:
+    resource: "@AppBundle/Resources/config/routing/publicaciones.yml"
+    prefix:   /admin/publicaciones
+
+homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
