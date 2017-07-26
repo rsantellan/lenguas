@@ -96,6 +96,16 @@ class DefaultController extends Controller
             'archivos' => $archivosFiles,
             'normas' => $normasFiles,
         ]);
+    }
+
+    public function buscarAction(Request $request)
+    {
+        $keyword = $request->query->get('search');
+        $trabajos = $this->get('lenguas.trabajos')->doSearch($keyword);
+        $documentos = $this->get('lenguas.documentos')->doSearch($keyword);
+        var_dump($keyword);
+        var_dump(count($trabajos));
+        var_dump(count($documentos));
         die;
     }
 

@@ -29,4 +29,13 @@ class DocumentoService
     {
     	return $this->em->getRepository('AppBundle:Documento')->findOneBySlug($slug);
     }
+
+    public function doSearch($keyword)
+    {
+        $dql = 'select d from AppBundle:Documento d where d.title like :title or d.body like :body';
+        $searchWord = '%'.$keyword.'%';
+        return $this->em->createQuery($dql)
+                        ->setParameters(['title' => $searchWord, 'body' => $searchWord])
+                        ->getResult();
+    }
 }

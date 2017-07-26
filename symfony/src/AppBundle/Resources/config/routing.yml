@@ -48,4 +48,8 @@ sitiosinteres:
 
 colaboradores:
     path:     /colaboradores.html
-    defaults: { _controller: AppBundle:Default:colaboradores }    
+    defaults: { _controller: AppBundle:Default:colaboradores }
+
+buscador:
+    path:     /buscar.html
+    defaults: { _controller: AppBundle:Default:buscar }

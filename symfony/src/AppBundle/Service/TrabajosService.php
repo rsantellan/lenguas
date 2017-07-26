@@ -71,4 +71,13 @@ class TrabajosService
     {
         return $this->sortTrabajosPerLetter($this->retrieveAllMonografiasPosgrado(), $mediaAlbumService);
     }
+
+    public function doSearch($keyword)
+    {
+        $dql = 'select t from AppBundle:Trabajo t where t.authors like :authors or t.description like :description or t.year like :year order by t.type';
+        $searchWord = '%'.$keyword.'%';
+        return $this->em->createQuery($dql)
+                        ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])
+                        ->getResult();
+    }
 }
