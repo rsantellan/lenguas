@@ -15,7 +15,7 @@
       </trans-unit>
       <trans-unit id="9cb1aeee0ddbd5205d1a2f00133168b5" resname="app_title_monografias_posgrado">
         <source>app_title_monografias_posgrado</source>
-        <target>__app_title_monografias_posgrado</target>
+        <target>Trabajos de Posgrado</target>
       </trans-unit>
       <trans-unit id="d02335fb7259292abdfdb843f39128b4" resname="app_title_publicaciones">
         <source>app_title_publicaciones</source>
@@ -23,35 +23,35 @@
       </trans-unit>
       <trans-unit id="5d3b884ee7f2fe723953e07231545414" resname="menu_buscador">
         <source>menu_buscador</source>
-        <target>__menu_buscador</target>
+        <target>Buscador...</target>
       </trans-unit>
       <trans-unit id="9a999fd3922f5a2efd16b337e1ad51f7" resname="menu_inicio">
         <source>menu_inicio</source>
-        <target>__menu_inicio</target>
+        <target>Inicio</target>
       </trans-unit>
       <trans-unit id="955d0402cdf4dfffd7c213dff3a37e0e" resname="menu_publicaciones">
         <source>menu_publicaciones</source>
-        <target>__menu_publicaciones</target>
+        <target>Publicaciones</target>
       </trans-unit>
       <trans-unit id="62f51f852ce2b6159f2e056b8fc7918e" resname="menu_monografias">
         <source>menu_monografias</source>
-        <target>__menu_monografias</target>
+        <target><![CDATA[Monograf&iacute;as]]></target>
       </trans-unit>
       <trans-unit id="5ad6e7228ddec8589d1be8e96d1062d7" resname="menu_monografias_grado">
         <source>menu_monografias_grado</source>
-        <target>__menu_monografias_grado</target>
+        <target>Trabajos de Grado</target>
       </trans-unit>
       <trans-unit id="5b046dcb4098d37b00defea2b0698add" resname="menu_monografias_posgrado">
         <source>menu_monografias_posgrado</source>
-        <target>__menu_monografias_posgrado</target>
+        <target>Trabajos de Posgrado</target>
       </trans-unit>
       <trans-unit id="a192d30dbc3ab6a28fae0c170b4bdcf2" resname="menu_documentos">
         <source>menu_documentos</source>
-        <target>__menu_documentos</target>
+        <target>Documentos</target>
       </trans-unit>
       <trans-unit id="725d5fa267b61f1ac4756abc6936c784" resname="menu_sitios_interes">
         <source>menu_sitios_interes</source>
-        <target>__menu_sitios_interes</target>
+        <target><![CDATA[Sitios de inter&eacute;s]]></target>
       </trans-unit>
       <trans-unit id="c526e2ad67ec0ce91e93caa708f744ac" resname="footer_responsables">
         <source>footer_responsables</source>
