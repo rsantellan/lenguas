@@ -9,8 +9,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Monografías</a></li>
-                    <li class="active">Trabajos de posgrado</li>
+                    <li><a href="{{ path('homepage') }}">{% trans %}menu_monografias{% endtrans %}</a></li>
+                    <li class="active">{% trans %}app_title_monografias_posgrado{% endtrans %}</li>
                 </ol>
             </div>
         </div>
@@ -22,8 +22,7 @@
     <div class="container">
 
       <div class="mb-80">
-          <h2 class="section-title section-sub">Trabajos de Posgrado</h2>
-          <p class="section-sub">Se publican aquí trabajos de investigación realizados en el marco del cursos de posgrado en la Universidad de la República o en otras universidades.  Agradecemos a los autores que generosamente nos permitieron su difusión. </p>               
+          {% trans %}monografias_posgrado_texto{% endtrans %}            
       </div>
 
       <div class="row mb-80">
@@ -44,7 +43,7 @@
                     <div class="panel-body">
                         <div><strong>{{ trabajo['trabajo'].authors }}:</strong> {{ trabajo['trabajo'].description }}</div>
                         {% for file in trabajo['files'] %}
-                          <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red">descargar pdf {% if trabajo['files'] | length > 1 %} {{ loop.index }}{% endif %}</a> {% if trabajo['files'] | length > 1 %} </br></br>{% endif %}
+                          <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red">{% trans %}monografias_descargar_archivo{% endtrans %} {% if trabajo['files'] | length > 1 %} {{ loop.index }}{% endif %}</a> {% if trabajo['files'] | length > 1 %} </br></br>{% endif %}
                         {% endfor %}
                     </div>
                     {% if data | length > 1 and not loop.last %}<hr/>{% endif %} 

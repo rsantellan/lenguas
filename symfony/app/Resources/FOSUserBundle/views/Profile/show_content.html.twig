@@ -1,0 +1,12 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+  <section class="panel panel-default">
+	<header class="panel-heading">Bienvenido</header>
+	<div class="bg-white user pd-md">
+	  <h6><strong>Bienvenido. {{ user.email }}</strong></h6>
+		  <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+		  <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+		  <a href="{{ path('maith_admin_homepage') }}" class="btn btn-info">Ir al panel</a>
+	</div>
+  </section>
+

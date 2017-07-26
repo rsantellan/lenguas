@@ -1,0 +1,43 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+        <section class="panel panel-color">
+        <header class="panel-heading text-uppercase"><i class="fa fa-pencil-square-o"></i>Editar Usuario</header>
+        <div class="panel-body">
+            {{ form_start(edit_form, {'attr' : { 'role' : 'form'} }) }}
+            <div class="form-group">
+                {{ form_errors(edit_form.email) }}
+                <label for="{{ edit_form.email.vars.id }}">Email</label>
+                {{ form_widget(edit_form.email, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_errors(edit_form.user_roles) }}
+                <label for="{{ edit_form.user_roles.vars.id }}">Permisos</label>
+                {{ form_widget(edit_form.user_roles, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_rest(edit_form) }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-default"><i class="fa fa-save"></i>Guardar</button>
+            </div>    
+            {{ form_end(edit_form) }}
+        </div>
+        </section>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <a href="{{ path('admin_users_index') }}" class="btn btn-success" style="float: left; margin: 0!important;">
+            <i class="fa fa-arrow-left"></i>Volver al listado
+        </a>
+            <div class="pull-right">  
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-warning" value="Borrar Usuario">
+            {{ form_end(delete_form) }}
+            </div>
+    </div>
+</div>
+
+{% endblock %}

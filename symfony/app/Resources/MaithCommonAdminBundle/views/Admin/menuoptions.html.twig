@@ -1,3 +1,24 @@
+<li class="dropdown{% if (activemenu is defined) and activemenu == 'users' %} collapse-open open{% endif %}">
+	<a href="javascript:;" data-toggle="dropdown">
+		<i class="fa fa-user"></i>
+		<span>{% trans %}admin_menu_tab_usuarios{% endtrans %}</span>
+		<i class="toggle-accordion"></i>
+	</a>
+	<ul class="dropdown-menu">
+		<li class="{% if (activesubmenu is defined) and activesubmenu == 'users' %}active{%endif%}">
+			<a href="{{ path('admin_users_index')}}">
+				<span>Usuarios</span>
+			</a>
+		</li>
+		{% if is_granted('ROLE_VIEW_PERMISSION_GROUPS') %}
+		<li class="{% if (activesubmenu is defined) and activesubmenu == 'usersgrouproles' %}active{%endif%}">
+			<a href="{{ path('grouprole')}}">
+				<span>{% trans %}admin_menu_grupos_roles{% endtrans %}</span>
+			</a>
+		</li>
+		{% endif %}
+	</ul>
+</li>
 <li>
 	<a href="{{ path('admin_publicaciones_index')}}">
 		<i class="fa fa-file-text-o"></i>

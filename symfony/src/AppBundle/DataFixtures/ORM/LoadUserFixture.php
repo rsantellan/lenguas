@@ -30,9 +30,13 @@ class LoadUserFixture extends AbstractFixture implements OrderedFixtureInterface
     {
         $role = new Role();
         $role->setName('ROLE_ADMIN');
-        $role->setDescription('Super admin role');
+        $role->setDescription('Admin role');
         $manager->persist($role);
-
+        $roleTranslator = new Role();
+        $roleTranslator->setName('ROLE_VIEW_TRANSLATOR');
+        $roleTranslator->setDescription('Translator role');
+        $manager->persist($roleTranslator);
+        
         $userManager = $this->container->get('fos_user.user_manager');
 
         $mailuser = $userManager->createUser();
@@ -42,6 +46,7 @@ class LoadUserFixture extends AbstractFixture implements OrderedFixtureInterface
         $mailuser->setEnabled(true);
         $mailuser->setSuperAdmin(true);
         $mailuser->addRole($role);
+        $mailuser->addRole($roleTranslator);
         $manager->persist($mailuser);
 
         $manager->flush();

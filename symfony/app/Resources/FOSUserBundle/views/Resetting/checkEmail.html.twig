@@ -1,0 +1,16 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <section class="panel panel-default">
+	<header class="panel-heading">Olvido de contraseña</header>
+	<div class="bg-white user pd-md">
+	  <h6>
+		{{ 'resetting.check_email'|trans({'%email%': email}) }}
+	  </h6>
+	</div>
+  </section>
+</div>
+{% endblock %}

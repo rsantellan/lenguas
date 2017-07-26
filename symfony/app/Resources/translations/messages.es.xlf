@@ -61,6 +61,57 @@
         <source>footer_colaboradores</source>
         <target>COLABORADORES</target>
       </trans-unit>
+      <trans-unit id="b136cbb8cbe2711acaf0945eba7f4901" resname="colaboradores_titulo">
+        <source>colaboradores_titulo</source>
+        <target>Colaboradores</target>
+      </trans-unit>
+      <trans-unit id="a0df779acf683a653386d078100ce55e" resname="colaboradores_texto">
+        <source>colaboradores_texto</source>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Agradecimientos</h2>
+			<p class="section-sub">A los investigadores de la Facultad de Humanidades y Ciencias de la Educación, especialmente, a Adolfo Elizaincín, Marisa Malcuori, Mirta Groppi, por su impulso pionero. A los estudiantes de la Facultad de Humanidades y Ciencias de la Educación y de la Facultad de Información y Comunicación que, a través de su participación en los cursos de Lingüística Histórica, Seminarios, Taller Metodológico, Lengua II han contribuido con su trabajo a ampliar los materiales que contiene esta web.</p>
+			<p class="section-sub">A la Comisión Sectorial de Investigación Científica por su apoyo económico en diversas etapas del trabajo de las últimas décadas así como a la  Swedish Foundation for International Cooperation in Research and Higher Education, y especialmente a Laura Álvarez por su rol fundamental la red de intercambio académico con Suecia y Brasil.</p>
+			<p class="section-sub">A quienes han integrado este grupo de investigación en el marco de proyectos financiados por CSIC: Ariadna Islas, Serrana Caviglia, Marianela Fernández, Ana Clara Polakof, Juan Justino da Rosa, Yamila Montenegro, Cecila Bértola, Amparo Fernández, Macarena González, Soledad Álvarez, Hernán Viera, , Mayte Gorroztorrazo, Gelsi Ausserbauer, Ligia Rospantini.</p>
+			<p class="section-sub">Han colaborado con esta web Cecilia Bértola, Amparo Fernández Guerra, Juan Manuel Fustes, Joaquín Ginés y Yamila Montenegro.</p>]]></target>
+      </trans-unit>
+      <trans-unit id="d241c980792841a17ab3147438e4f4cb" resname="monografias_grado_texto">
+        <source>monografias_grado_texto</source>
+        <target><![CDATA[<h2 class="section-title section-sub">Trabajos de Grado</h2>
+          <p class="section-sub">Se publican aquí trabajos de investigación realizados por estudiantes en el marco del curso de grado (Lingüística Histórica, Seminarios, Taller metodológico). Agradecemos a los autores que generosamente nos permitieron su difusión.</p>]]></target>
+      </trans-unit>
+      <trans-unit id="d2543d17d17f443bd9ef960343011105" resname="monografias_posgrado_texto">
+        <source>monografias_posgrado_texto</source>
+        <target><![CDATA[          <h2 class="section-title section-sub">Trabajos de Posgrado</h2>
+          <p class="section-sub">Se publican aquí trabajos de investigación realizados en el marco del cursos de posgrado en la Universidad de la República o en otras universidades.  Agradecemos a los autores que generosamente nos permitieron su difusión. </p>   ]]></target>
+      </trans-unit>
+      <trans-unit id="93760c341cdb8bfc6e4d53ac5cce0e37" resname="inicio_texto">
+        <source>inicio_texto</source>
+        <target><![CDATA[<h2 class="section-title text-uppercase section-sub">Presentación</h2>
+                  <p class="section-sub">Esta página web reúne documentos y fuentes para la investigación de la historia de las lenguas en Uruguay, así como publicaciones y trabajos sobre la temática.</p>
+                  <p class="section-sub">Recupera la historia de la diversidad lingüística de un territorio en el que coexistieron, junto al español y al portugués, lenguas indígenas y africanas.</p>
+                  <p class="section-sub">La mayoría de los materiales incluidos aquí surgieron en el marco de diferentes actividades de investigación y docencia realizadas, desde la década del 90, en el Instituto de Lingüística de la Facultad de Humanidades y Ciencias de la Educación. A partir del 2014 se sumaron los esfuerzos del Departamento de Medios y Lenguajes de la Facultad de Información y Comunicación.</p>]]></target>
+      </trans-unit>
+      <trans-unit id="33022112455149646affff9de5d3f5c3" resname="publicaciones_texto">
+        <source>publicaciones_texto</source>
+        <target><![CDATA[          <h2 class="section-title text-capitalize section-sub">Publicaciones</h2>
+          <p class="section-sub">Se incluyen aquí publicaciones académicas sobre temas relacionados con la historia de las lenguas en Uruguay, surgidas a partir de los años 90.</p>
+          <p class="section-sub">Agradecemos a los autores, editores y compiladores de estos trabajos que gentil-mente nos permitieron su difusión a través de esta página.</p> ]]></target>
+      </trans-unit>
+      <trans-unit id="a2ced9f735262da7858a0e577bba422e" resname="monografias_descargar_archivo">
+        <source>monografias_descargar_archivo</source>
+        <target>descargar pdf</target>
+      </trans-unit>
+      <trans-unit id="ee51a9eb6d6b279e5fb5ca33dc59f8ae" resname="publicaciones_descargar_archivo">
+        <source>publicaciones_descargar_archivo</source>
+        <target>descargar pdf</target>
+      </trans-unit>
+      <trans-unit id="e51239f313f77ea28ef636884cb13308" resname="documento_ver_texto_completo">
+        <source>documento_ver_texto_completo</source>
+        <target>ver texto completo</target>
+      </trans-unit>
+      <trans-unit id="57ab6906a2efeebc4d9a644de7aaca05" resname="documento_ver_norma">
+        <source>documento_ver_norma</source>
+        <target><![CDATA[Ver Normas de transcripci&oacute;n]]></target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

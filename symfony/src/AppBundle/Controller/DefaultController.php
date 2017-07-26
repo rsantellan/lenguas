@@ -75,10 +75,26 @@ class DefaultController extends Controller
         if($documento === null){
           throw $this->createNotFoundException('No se puede encontrar el documento.');
         }
+        $allFiles = $this->get('media_album_service')->retrieveAllFilesByObject($documento->getFullClassName(), $documento->getId());
+        $portada = NULL;
+        $archivosFiles = [];
+        $normasFiles = [];
+        if(isset($allFiles['portada']) && $allFiles['portada'] !== null){
+            $portada = array_shift($allFiles['portada']);
+        }
+        if(isset($allFiles['archivos']) && $allFiles['archivos'] !== null){
+            $archivosFiles = $allFiles['archivos'];
+        }
+        if(isset($allFiles['normas']) && $allFiles['normas'] !== null){
+            $normasFiles = $allFiles['normas'];
+        }
         return $this->render('default/documento.html.twig', [
             'documento' => $documento,
             'activemenu' => 'documentos',
             'activesubmenu' => $slug,
+            'portada' => $portada,
+            'archivos' => $archivosFiles,
+            'normas' => $normasFiles,
         ]);
         die;
     }

@@ -1,0 +1,59 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block body %}
+<section class="panel panel-color">
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Usuarios</header>
+  <div class="panel-body">
+    <div class="table-responsive no-border">
+      <table class="table table-bordered table-striped mg-t datatable dataTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>email</th>
+                <th>Enabled</th>
+                <th>Last login</th>
+                <th>Roles</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('admin_users_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% if user.enabled %}Activo{% else %}Inactivo{% endif %}
+                </td>
+                <td>{{ user.lastLogin | date('d/m/Y') }}</td>
+                <td>{{ user.showRolesDescriptions }}</td>
+                <td>
+                    {% if user.enabled %}
+                        <form action="{{ path('admin_users_deactivate', { 'id': user.id }) }}" method="POST" onsubmit="return confirm('¿Esta seguro de desactivar el usuario?')">
+                            <input type="submit" value="Desactivar" class="btn btn-danger" />
+                        </form>
+                    {% else %}
+                        <form action="{{ path('admin_users_activate', { 'id': user.id }) }}" method="POST" onsubmit="return confirm('¿Esta seguro de activar el usuario?')">
+                            <input type="submit" value="Activar" class="btn btn-warning" />
+                        </form>
+                    {% endif %}
+                    <a href="{{ path('admin_users_edit', { 'id': user.id }) }}" class="btn btn-info">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+      </div>
+    </div>
+  </section>
+{#  
+<div class="row">
+  <div class="col-lg-6 text-left">
+      <a href="{{ path('admin_users_new') }}" class="btn btn-success">
+          <i class="fa fa-pencil-square-o"></i>Crear
+      </a>
+  </div>
+</div>
+#}
+{% endblock %}

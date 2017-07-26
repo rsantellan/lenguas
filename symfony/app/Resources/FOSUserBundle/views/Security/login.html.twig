@@ -1,0 +1,38 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+	<section class="panel panel-default">
+	  <header class="panel-heading">Loguearse</header>
+	  <div class="bg-white user pd-md">
+		<h6>
+		  <strong>Bienvenido.</strong>Ingresa para empezar a utilizar el administrador!</h6>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+				Estas logueado como: app.user.username
+				<a href="{{ path('fos_user_security_logout') }}">
+				  Desloguearse
+				</a>
+            {% endif %}
+		<form action="{{ path("fos_user_security_check") }}" method="post" accept-charset="utf-8" role="form">
+		  <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		  <input name="_username" required="required" value="{{ last_username }}" type="text" class="form-control mg-b-sm" placeholder="Correo Electronico" autofocus>
+		  <input type="password" name="_password" required="required" class="form-control" placeholder="Contraseña">
+		  <label class="checkbox pull-left">
+			<input type="checkbox" name="_remember_me" value="on">Recuerda mi usuario
+		  </label>
+		  <div class="text-right mg-b-sm mg-t-sm">
+			<a href="{{ path('fos_user_resetting_request')}}">¿Olvidaste la contraseña?</a>
+		  </div>
+		  <button class="btn btn-info btn-block" type="submit" name="_submit">Loguearse</button>
+		</form>
+	  </div>
+	</section>
+  </div>	
+{% endblock fos_user_content %}

@@ -14,6 +14,10 @@ app_admin_documentos:
     resource: "@AppBundle/Resources/config/routing/documento.yml"
     prefix:   /admin/documentos
 
+app_admin_users:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/users
+    
 homepage:
     path:     /
     defaults: { _controller: AppBundle:Default:index }

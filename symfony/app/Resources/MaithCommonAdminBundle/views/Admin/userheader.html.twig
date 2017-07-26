@@ -13,14 +13,14 @@
 	</a>
 	<ul class="dropdown-menu dropdown-menu-right mg-r-xs">
 	  <li>
-		<a href="{#{ path('user_show')}#}">
+		<a href="{{ path('fos_user_change_password')}}">
 		  <div class="pd-t-sm">
 			{{ app.user.username }}
 		  </div>
 		</a>
 	  </li>
 	  <li>
-		<a href="{#{ path('user_show')}#}">Editar usuario</a>
+		<a href="{{ path('fos_user_change_password')}}">Editar usuario</a>
 	  </li>
 	  <li>
 		<a href="{{ path('homepage') }}">Sitio</a>

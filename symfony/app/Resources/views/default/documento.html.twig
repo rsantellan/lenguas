@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Monografías</a></li>
+                    <li><a href="{{ path('homepage') }}">{% trans %}menu_documentos{% endtrans %}</a></li>
                     <li class="active">{{ documento.title }}</li>
                 </ol>
             </div>
@@ -21,15 +21,19 @@
 
 <section class="section-padding">
     <div class="container">
-
+      {% if not portada is null %}
       <div class="mb-80">
-          <img src="{{ asset('assets/img/Tapa-Documentos-siglo-XVIII.jpg')}}" class="doc-libros">
+          <img src="{{ portada.fullPath | mImage(500, 500, 'o') }}" class="doc-libros">
       </div>
-
+      {% endif %}
       <div class="mb-80">
       	{{ documento.body | raw }}
-          <a href="documentos/Documentos-para-la-historia-del-esp-en-el-Uruguay-Siglo-XVIII.pdf" target="blank" class="waves-effect waves-light btn red red-left">ver texto completo</a>
-          <a href="documentos/Normas-de-transcripcion-2012-3.pdf" class="normas-transcripcion" target="blank">Ver Normas de transcripción</a></p>
+        {% for file in archivos %}
+          <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red red-left">{% trans %}documento_ver_texto_completo{% endtrans %}{% if archivos | length > 1 %} {{ loop.index }}{% endif %}</a> {% if archivos | length > 1 %} </br></br>{% endif %}
+        {% endfor %}
+        {% for file in normas %}
+          <a href="{{ path('descargar_archivo', {'id': file.id}) }}" class="normas-transcripcion" target="blank">{% trans %}documento_ver_norma{% endtrans %}{% if archivos | length > 1 %} {{ loop.index }}{% endif %}</a>{% if archivos | length > 1 %} </br></br>{% endif %}
+        {% endfor %}
       </div>
 
 
