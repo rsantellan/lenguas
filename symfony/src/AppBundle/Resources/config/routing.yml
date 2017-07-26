@@ -37,3 +37,11 @@ descargar_archivo:
 documento:
     path:     /documento/{slug}.html
     defaults: { _controller: AppBundle:Default:documento }
+
+sitiosinteres:
+    path:     /sitios-interes.html
+    defaults: { _controller: AppBundle:Default:sitiosinteres }   
+
+colaboradores:
+    path:     /colaboradores.html
+    defaults: { _controller: AppBundle:Default:colaboradores }    

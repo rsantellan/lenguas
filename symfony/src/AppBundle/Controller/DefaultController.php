@@ -46,7 +46,20 @@ class DefaultController extends Controller
             'trabajos' => $trabajos
         ]);
     }
+    
+    public function sitiosinteresAction(Request $request)
+    {
+        return $this->render('default/sitiosinteres.html.twig', [
+            'activemenu' => 'sitiosinteres',
+        ]);
+    }
 
+    public function colaboradoresAction(Request $request)
+    {
+        return $this->render('default/colaboradores.html.twig', [
+            'activemenu' => 'colaboradores',
+        ]);
+    }
 
     public function menuDocumentosAction(Request $request)
     {

@@ -8,7 +8,7 @@
         <meta name="keywords" content="">
         <meta name="author" content="lauranozar.com">
         <meta name="author" content="rodrigosantellan.com">
-        <title>{% block title %}{% trans %}app_title{% endtrans %} Historia lingüística del Uruguay{% endblock %}</title>
+        <title>{% block title %}{% trans %}app_title{% endtrans %}{% endblock %}</title>
 
         <!--  favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/img/ico/favicon.png') }}">
@@ -68,7 +68,7 @@
                             <form action="#" class="white-form">
                                 <div class="input-field">
                                     <input type="text" name="search" id="search">
-                                    <label for="search" class="">Buscador...</label>
+                                    <label for="search" class="">{% trans %}menu_buscador{% endtrans %}</label>
                                 </div>
                                 <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
                                 
@@ -77,25 +77,18 @@
                     </div><!-- /.search-wrapper -->
                 
                     <div id="materialize-menu" class="menuzord">
-
-                        <!--logo start
-                        <a href="index.html" class="logo-brand">
-                            <img class="retina" src="assets/img/logo.png" alt=""/>
-                        </a>
-                        logo end-->
-
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
-                            <li><a href="{{ path('homepage') }}" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">Inicio</a></li>
+                            <li><a href="{{ path('homepage') }}" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">{% trans %}menu_inicio{% endtrans %}</a></li>
 
                             <li>
-                                <a href="{{ path('publicaciones') }}" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Publicaciones</a></li>
+                                <a href="{{ path('publicaciones') }}" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_publicaciones{% endtrans %}</a></li>
 
                             <li>
-                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>Monografías</a>
+                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>{% trans %}menu_monografias{% endtrans %}</a>
                                 <ul class="dropdown">
-                                    <li><a href="{{ path('monografiagrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">Trabajos de Grado</a></li>
-                                    <li><a href="{{ path('monografiaposgrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">Trabajos de Posgrado</a></li>
+                                    <li><a href="{{ path('monografiagrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">{% trans %}menu_monografias_grado{% endtrans %}</a></li>
+                                    <li><a href="{{ path('monografiaposgrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">{% trans %}menu_monografias_posgrado{% endtrans %}</a></li>
                                 </ul>
                             </li>
 
@@ -109,11 +102,11 @@
                                 </ul>
                             </li>
 
-                            <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Documentos</a>
+                            <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
                                 {{ render(controller('AppBundle:Default:menuDocumentos')) }}
                             </li>
 
-                            <li><a href="sitios-interes.php" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>
+                            <li><a href="{{ path('sitiosinteres') }}" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_sitios_interes{% endtrans %}</a></li>
 
                             <li><a href="#" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
                         </ul>
@@ -147,7 +140,7 @@
 
             <div class="secondary-footer brand-bg darken-2">
                 <div class="container">
-                    <span class="copy-text"><strong>Responsables ></strong> <a href="virginia.bertolotti@fic.edu.uy">Virginia Bertolotti</a> &nbsp;  | &nbsp;  <a href="mailto:collmagdalena@gmail.com">Magdalena Coll</a></br><strong><a href="colaboradores.php">COLABORADORES</a></span>
+                    <span class="copy-text">{% trans %}footer_responsables{% endtrans %}<a href="{{ path('colaboradores')}}">{% trans %}footer_colaboradores{% endtrans %}</a></span>
 
                 </div><!-- /.container -->
             </div><!-- /.secondary-footer -->

@@ -2,8 +2,4 @@
 	{% for document in documents %}
 		<li><a href="{{ path('documento', {'slug': document.slug})}}" class="{% if (activesubmenu is defined) and activesubmenu == '{{ document.slug }}' %}current{% endif %}">{{ document.title }}</a></li>
 	{% endfor %}
-    <li><a href="doc_SXVIII.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_SXVIII' %}current{% endif %}">Documentos siglo XVIII</a></li>
-
-    <li><a href="doc_XIX.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX' %}current{% endif %}">Documentos siglo XIX</a></li>
-    <li><a href="doc_XIX_pt.php" class="{% if (activesubmenu is defined) and activesubmenu == 'doc_XIX_pt' %}current{% endif %}">Documentos portugués siglo XIX</a></li>
 </ul>
