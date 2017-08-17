@@ -33,16 +33,6 @@ class TrabajosService
         return $this->sortTrabajosPerLetter($this->retrieveAllOfCategory($category), $mediaAlbumService);
     }
 
-    public function retrieveAllPublicaciones()
-    {
-    	$dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc, t.year asc';
-    	return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::PUBLICACION])->getResult();
-    }
-
-    public function retrieveAllPublicacionesPerLetter($mediaAlbumService = null)
-    {
-        return $this->sortTrabajosPerLetter($this->retrieveAllPublicaciones(), $mediaAlbumService);
-    }
 
     private function sortTrabajosPerLetter($trabajos, $mediaAlbumService = null)
     {
@@ -62,31 +52,10 @@ class TrabajosService
         return $returnData;
     }
 
-    public function retrieveAllMonografiasGrado()
-    {
-        $dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc';
-        return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::MONOGRAFIAGRADO])->getResult();
-    }    
-
-    public function retrieveAllMonografiasGradoPerLetter($mediaAlbumService = null)
-    {
-        return $this->sortTrabajosPerLetter($this->retrieveAllMonografiasGrado(), $mediaAlbumService);
-    }
-
-    public function retrieveAllMonografiasPosgrado()
-    {
-        $dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc';
-        return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::MONOGRAFIAPOSGRADO])->getResult();
-    }    
-
-    public function retrieveAllMonografiasPosgradoPerLetter($mediaAlbumService = null)
-    {
-        return $this->sortTrabajosPerLetter($this->retrieveAllMonografiasPosgrado(), $mediaAlbumService);
-    }
 
     public function doSearch($keyword)
     {
-        $dql = 'select t from AppBundle:Trabajo t where t.authors like :authors or t.description like :description or t.year like :year order by t.type';
+        $dql = 'select t from AppBundle:Trabajo t where t.authors like :authors or t.description like :description or t.year like :year order by t.category';
         $searchWord = '%'.$keyword.'%';
         return $this->em->createQuery($dql)
                         ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])

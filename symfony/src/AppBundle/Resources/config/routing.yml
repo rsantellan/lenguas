@@ -1,15 +1,3 @@
-app_admin_publicaciones:
-    resource: "@AppBundle/Resources/config/routing/publicaciones.yml"
-    prefix:   /admin/publicaciones
-
-app_admin_monografiagrado:
-    resource: "@AppBundle/Resources/config/routing/monografiagrado.yml"
-    prefix:   /admin/monografiagrado
-
-app_admin_monografiaposgrado:
-    resource: "@AppBundle/Resources/config/routing/monografiaposgrado.yml"
-    prefix:   /admin/monografiaposgrado
-
 app_admin_documentos:
     resource: "@AppBundle/Resources/config/routing/documento.yml"
     prefix:   /admin/documentos
@@ -33,18 +21,6 @@ homepage:
 publicaciones_genericos:
     path:     /cat/{slug}.html
     defaults: { _controller: AppBundle:Default:genericos }
-
-#publicaciones:
-#    path:     /publicaciones.html
-#    defaults: { _controller: AppBundle:Default:publicaciones }
-
-#monografiagrado:
-#    path:     /monografias-grado.html
-#    defaults: { _controller: AppBundle:Default:monografiagrado }
-
-#monografiaposgrado:
-#    path:     /monografias-posgrado.html
-#    defaults: { _controller: AppBundle:Default:monografiaposgrado }
 
 descargar_archivo:
     path:     /{id}/descargar.html
