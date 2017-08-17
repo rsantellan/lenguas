@@ -31,8 +31,7 @@
 
             <div class="secondary-footer brand-bg darken-2">
                 <div class="container">
-                    <span class="copy-text"><strong>Responsables ></strong> <a href="virginia.bertolotti@fic.edu.uy">Virginia Bertolotti</a> &nbsp;  | &nbsp;  <a href="mailto:collmagdalena@gmail.com">Magdalena Coll</a></br><strong><a href="colaboradores.php">COLABORADORES</a></span>
-
+                    <span class="copy-text"><strong>Responsables ></strong> <a href="mailto:virginia.bertolotti@fic.edu.uy">Virginia Bertolotti</a> &nbsp;  | &nbsp;  <a href="mailto:collmagdalena@gmail.com">Magdalena Coll</a></br><strong><a href="colaboradores.php">COLABORADORES</a> | <strong><a href="agradecimientos.php">AGRADECIMIENTOS</a></span>
                 </div><!-- /.container -->
             </div><!-- /.secondary-footer -->
         </footer>

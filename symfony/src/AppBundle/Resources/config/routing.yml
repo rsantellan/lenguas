@@ -1,15 +1,3 @@
-app_admin_publicaciones:
-    resource: "@AppBundle/Resources/config/routing/publicaciones.yml"
-    prefix:   /admin/publicaciones
-
-app_admin_monografiagrado:
-    resource: "@AppBundle/Resources/config/routing/monografiagrado.yml"
-    prefix:   /admin/monografiagrado
-
-app_admin_monografiaposgrado:
-    resource: "@AppBundle/Resources/config/routing/monografiaposgrado.yml"
-    prefix:   /admin/monografiaposgrado
-
 app_admin_documentos:
     resource: "@AppBundle/Resources/config/routing/documento.yml"
     prefix:   /admin/documentos
@@ -18,21 +6,21 @@ app_admin_users:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix:   /admin/users
     
+app_admin_category:
+    resource: "@AppBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
+    
+app_admin_trabajo:
+    resource: "@AppBundle/Resources/config/routing/trabajo.yml"
+    prefix:   /admin/data
+
 homepage:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
 
-publicaciones:
-    path:     /publicaciones.html
-    defaults: { _controller: AppBundle:Default:publicaciones }
-
-monografiagrado:
-    path:     /monografias-grado.html
-    defaults: { _controller: AppBundle:Default:monografiagrado }
-
-monografiaposgrado:
-    path:     /monografias-posgrado.html
-    defaults: { _controller: AppBundle:Default:monografiaposgrado }
+publicaciones_genericos:
+    path:     /cat/{slug}.html
+    defaults: { _controller: AppBundle:Default:genericos }
 
 descargar_archivo:
     path:     /{id}/descargar.html
@@ -44,8 +32,16 @@ documento:
 
 sitiosinteres:
     path:     /sitios-interes.html
-    defaults: { _controller: AppBundle:Default:sitiosinteres }   
+    defaults: { _controller: AppBundle:Default:sitiosinteres }
+
+otrosmateriales:
+    path:     /otros-materiales.html
+    defaults: { _controller: AppBundle:Default:otrosmateriales }   
 
 colaboradores:
     path:     /colaboradores.html
-    defaults: { _controller: AppBundle:Default:colaboradores }    
+    defaults: { _controller: AppBundle:Default:colaboradores }
+
+buscador:
+    path:     /buscar.html
+    defaults: { _controller: AppBundle:Default:buscar }

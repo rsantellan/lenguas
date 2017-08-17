@@ -23,7 +23,7 @@ class LoadDocumentosFixture extends AbstractFixture implements OrderedFixtureInt
 
     public function getOrder()
     {
-        return 5;
+        return 6;
     }
 
     private function allData(){

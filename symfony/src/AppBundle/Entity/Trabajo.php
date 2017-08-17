@@ -12,10 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Trabajo
 {
-    const PUBLICACION = 1;
-    const MONOGRAFIAGRADO = 2;
-    const MONOGRAFIAPOSGRADO = 3;
-
     /**
      * @var int
      *
@@ -42,16 +38,15 @@ class Trabajo
     /**
      * @var int
      *
-     * @ORM\Column(name="type", type="smallint")
-     */
-    private $type;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="year", type="smallint", nullable=true)
      */
     private $year;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="trabajos")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
 
     /**
      * Get id
@@ -111,29 +106,6 @@ class Trabajo
         return $this->description;
     }
 
-    /**
-     * Set type
-     *
-     * @param integer $type
-     *
-     * @return Trabajo
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Set year
@@ -168,4 +140,28 @@ class Trabajo
     {
       return array("files");
     }    
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return Trabajo
+     */
+    public function setCategory(\AppBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

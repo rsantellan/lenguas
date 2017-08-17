@@ -1,0 +1,62 @@
+{% if publicaciones | length > 0 %}
+<li>
+	{% if publicaciones | length > 1 %}
+	<a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>{% trans %}menu_publicaciones{% endtrans %}</a>
+    <ul class="dropdown">
+    	{% for publicacion in publicaciones %}
+        <li><a href="{{ path('publicaciones_genericos', {'slug' : publicacion.slug }) }}" class="{% if (activesubmenu is defined) and activesubmenu == publicacion.name %}current{% endif %}">{{ publicacion.name }}</a></li>
+    	{% endfor %}
+    </ul>
+	{% else %}
+	<a href="{{ path('publicaciones_genericos', {'slug' : publicaciones[0].slug }) }}" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_publicaciones{% endtrans %}</a>
+	{% endif %}
+</li>
+{% endif %}
+{% if monografias | length > 0 %}
+<li>
+	{% if monografias | length > 1 %}
+	<a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>{% trans %}menu_monografias{% endtrans %}</a>
+    <ul class="dropdown">
+    	{% for monografia in monografias %}
+        <li><a href="{{ path('publicaciones_genericos', {'slug' : monografia.slug }) }}" class="{% if (activesubmenu is defined) and activesubmenu == monografia.name %}current{% endif %}">{{ monografia.name }}</a></li>
+    	{% endfor %}
+    </ul>
+	{% else %}
+	<a href="{{ path('publicaciones_genericos', {'slug' : publicaciones[0].slug }) }}" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_monografias{% endtrans %}</a>
+	{% endif %}
+</li>
+{% endif %}
+{% if fuentes | length > 0 %}
+<li>
+	{% if fuentes | length > 1 %}
+	<a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>{% trans %}menu_fuentes{% endtrans %}</a>
+    <ul class="dropdown">
+    	{% for fuente in fuentes %}
+        <li><a href="{{ path('publicaciones_genericos', {'slug' : fuente.slug }) }}" class="{% if (activesubmenu is defined) and activesubmenu == fuente.name %}current{% endif %}">{{ fuente.name }}</a></li>
+    	{% endfor %}
+    </ul>
+	{% else %}
+	<a href="{{ path('publicaciones_genericos', {'slug' : publicaciones[0].slug }) }}" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_fuentes{% endtrans %}</a>
+	{% endif %}
+</li>
+{% endif %}
+{#
+<li>
+    <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
+    <ul class="dropdown">
+        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'indigenas' %}current{% endif %}">Repositorios lexicográficos</a></li>
+        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios independientes</a></li>
+        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios de voces de origen africano</a></li>
+        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios riograndenses</a></li>
+    </ul>
+</li>
+#}
+{% if documents | length > 0 %}
+<li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
+    <ul class="dropdown">
+		{% for document in documents %}
+			<li><a href="{{ path('documento', {'slug': document.slug})}}" class="{% if (activesubmenu is defined) and activesubmenu == '{{ document.slug }}' %}current{% endif %}">{{ document.title }}</a></li>
+		{% endfor %}
+	</ul>
+</li>
+{% endif %}

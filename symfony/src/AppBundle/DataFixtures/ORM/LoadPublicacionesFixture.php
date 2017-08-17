@@ -23,7 +23,7 @@ class LoadPublicacionesFixture extends AbstractFixture implements OrderedFixture
 
     public function getOrder()
     {
-        return 2;
+        return 3;
     }
 
     private function allData(){
@@ -82,10 +82,10 @@ class LoadPublicacionesFixture extends AbstractFixture implements OrderedFixture
     {
     	foreach($this->allData() as $data){
     		$trabajo = new Trabajo();
-    		$trabajo->setType(Trabajo::PUBLICACION);
     		$trabajo->setAuthors($data['author']);
     		$trabajo->setDescription($data['description']);
     		$trabajo->setYear($data['year']);
+            $trabajo->setCategory($this->getReference('category-publicaciones'));
     		$manager->persist($trabajo);
     	}
         $manager->flush();

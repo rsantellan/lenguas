@@ -23,7 +23,7 @@ class LoadGradoFixture extends AbstractFixture implements OrderedFixtureInterfac
 
     public function getOrder()
     {
-        return 3;
+        return 4;
     }
 
     private function allData(){
@@ -50,10 +50,10 @@ class LoadGradoFixture extends AbstractFixture implements OrderedFixtureInterfac
     {
     	foreach($this->allData() as $data){
     		$trabajo = new Trabajo();
-    		$trabajo->setType(Trabajo::MONOGRAFIAGRADO);
     		$trabajo->setAuthors($data['author']);
     		$trabajo->setDescription($data['description']);
-        		$manager->persist($trabajo);
+            $trabajo->setCategory($this->getReference('category-trabajos-grado'));
+    		$manager->persist($trabajo);
     	}
         $manager->flush();
     }

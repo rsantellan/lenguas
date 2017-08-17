@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Logger;
 
 use AppBundle\Entity\Trabajo;
+use AppBundle\Entity\Category;
 
 class TrabajosService
 {
@@ -21,16 +22,17 @@ class TrabajosService
         $this->logger->addDebug('Starting Trabajos Service');
     }
 
-    public function retrieveAllPublicaciones()
+    public function retrieveAllOfCategory(Category $category)
     {
-    	$dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc, t.year asc';
-    	return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::PUBLICACION])->getResult();
+        $dql = 'select t from AppBundle:Trabajo t where t.category = :category order by t.authors asc, t.year asc';
+        return $this->em->createQuery($dql)->setParameters(['category' => $category])->getResult();
     }
 
-    public function retrieveAllPublicacionesPerLetter($mediaAlbumService = null)
+    public function retrieveAllOfCategoryPerLetter(Category $category, $mediaAlbumService = null)
     {
-        return $this->sortTrabajosPerLetter($this->retrieveAllPublicaciones(), $mediaAlbumService);
+        return $this->sortTrabajosPerLetter($this->retrieveAllOfCategory($category), $mediaAlbumService);
     }
+
 
     private function sortTrabajosPerLetter($trabajos, $mediaAlbumService = null)
     {
@@ -50,25 +52,13 @@ class TrabajosService
         return $returnData;
     }
 
-    public function retrieveAllMonografiasGrado()
-    {
-        $dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc';
-        return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::MONOGRAFIAGRADO])->getResult();
-    }    
 
-    public function retrieveAllMonografiasGradoPerLetter($mediaAlbumService = null)
+    public function doSearch($keyword)
     {
-        return $this->sortTrabajosPerLetter($this->retrieveAllMonografiasGrado(), $mediaAlbumService);
-    }
-
-    public function retrieveAllMonografiasPosgrado()
-    {
-        $dql = 'select t from AppBundle:Trabajo t where t.type = :type order by t.authors asc';
-        return $this->em->createQuery($dql)->setParameters(['type' => Trabajo::MONOGRAFIAPOSGRADO])->getResult();
-    }    
-
-    public function retrieveAllMonografiasPosgradoPerLetter($mediaAlbumService = null)
-    {
-        return $this->sortTrabajosPerLetter($this->retrieveAllMonografiasPosgrado(), $mediaAlbumService);
+        $dql = 'select t from AppBundle:Trabajo t where t.authors like :authors or t.description like :description or t.year like :year order by t.category';
+        $searchWord = '%'.$keyword.'%';
+        return $this->em->createQuery($dql)
+                        ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])
+                        ->getResult();
     }
 }

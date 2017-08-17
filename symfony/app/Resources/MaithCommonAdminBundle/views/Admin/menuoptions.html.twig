@@ -20,23 +20,12 @@
 	</ul>
 </li>
 <li>
-	<a href="{{ path('admin_publicaciones_index')}}">
+	<a href="{{ path('admin_category_index')}}">
 		<i class="fa fa-file-text-o"></i>
-		<span>Publicaciones</span>
+		<span>Categorias</span>
 	</a>
 </li>
-<li>
-	<a href="{{ path('admin_monografiagrado_index')}}">
-		<i class="fa fa-file-text-o"></i>
-		<span>Monografia Grado</span>
-	</a>
-</li>
-<li>
-	<a href="{{ path('admin_monografiaposgrado_index')}}">
-		<i class="fa fa-file-text-o"></i>
-		<span>Monografia Posgrado</span>
-	</a>
-</li>
+{{ render(controller('AppBundle:Category:menuAdminCategorias')) }}
 <li>
 	<a href="{{ path('admin_documentos_index')}}">
 		<i class="fa fa-file-text-o"></i>

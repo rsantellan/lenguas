@@ -1,11 +1,7 @@
 {% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
 
-{% block title %}AppBundle:AdminFacturas:showOk{% endblock %}
+{% block title %}Manejar {{ category.name }}{% endblock %}
 {% block javascripts %}
-{#
-<script type="text/javascript" src="{{ asset('bundles/rsantellansitio/boostrap/js/plugins/dataTables/jquery.dataTables.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/rsantellansitio/boostrap/js/plugins/dataTables/dataTables.bootstrap.js') }}"></script>
-#}
 <script src="{{ asset('bundles/maithcommonadmin/admin/vendor/chosen/chosen.jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bundles/maithcommonadmin/admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript">
@@ -48,14 +44,17 @@ $(document).ready(function () {
 {% endblock %}
 {% block body %}
 <section class="panel panel-color">
-  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Publicaciones</header>
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>{{ category.name }}</header>
   <div class="panel-body">
     <div class="table-responsive no-border">
         <table class="table table-bordered table-striped mg-t datatable dataTable">
             <thead>
                 <tr>
                     <th>Autores</th>
-                    <th>Description</th>
+                    <th>Descripción</th>
+                    {% if category.type == constant('PUBLICACION', category) %}
+                    <th>Año</th>
+                    {% endif %}
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -64,10 +63,13 @@ $(document).ready(function () {
                 <tr>
                     <td>{{ trabajo.authors }}</td>
                     <td>{{ trabajo.description }}</td>
+                    {% if category.type == constant('PUBLICACION', category) %}
+                    <td>{{ trabajo.year }}</td>
+                    {% endif %}
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('admin_monografiaposgrado_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
+                                <a href="{{ path('admin_trabajos_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
                             </li>
                         </ul>
                     </td>
@@ -78,12 +80,11 @@ $(document).ready(function () {
 
         <ul>
             <li>
-                <a href="{{ path('admin_monografiaposgrado_new') }}" class="btn btn-info">Crear publicación</a>
+                <a href="{{ path('admin_trabajos_new', {'slug' : category.slug }) }}" class="btn btn-info">Crear en {{ category.name }}</a>
             </li>
         </ul>
     </div>
   </div>
 </section>
-
     
 {% endblock %}

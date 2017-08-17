@@ -2,26 +2,31 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Trabajo;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use AppBundle\Entity\Trabajo;
+use AppBundle\Entity\Category;
+
 /**
- * Monografiagrado controller.
+ * Trabajo controller.
  *
  */
-class MonografiagradoController extends Controller
+class TrabajoController extends Controller
 {
     /**
      * Lists all trabajo entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request, $slug)
     {
-        $em = $this->getDoctrine()->getManager();
-        $trabajos = $this->get('lenguas.trabajos')->retrieveAllMonografiasGrado();
-        return $this->render('monografiagrado/index.html.twig', array(
-            'trabajos' => $trabajos,
+        $category = $this->get('lenguas.categories')->retrieveBySlug($slug);
+        if (!$category) {
+            throw $this->createNotFoundException('La categoria no existe');
+        }
+        return $this->render('trabajo/index.html.twig', array(
+            'category' => $category,
+            'trabajos' => $this->get('lenguas.trabajos')->retrieveAllOfCategory($category),
         ));
     }
 
@@ -29,11 +34,15 @@ class MonografiagradoController extends Controller
      * Creates a new trabajo entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, $slug)
     {
+        $category = $this->get('lenguas.categories')->retrieveBySlug($slug);
+        if (!$category) {
+            throw $this->createNotFoundException('La categoria no existe');
+        }
         $trabajo = new Trabajo();
-        $trabajo->setType(Trabajo::MONOGRAFIAGRADO);
-        $form = $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
+        $trabajo->setCategory($category);
+        $form = $this->retrieveForm($category, $trabajo);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -41,27 +50,21 @@ class MonografiagradoController extends Controller
             $em->persist($trabajo);
             $em->flush();
 
-            return $this->redirectToRoute('admin_monografiagrado_edit', array('id' => $trabajo->getId()));
+            return $this->redirectToRoute('admin_trabajos_edit', array('id' => $trabajo->getId()));
         }
-
-        return $this->render('monografiagrado/new.html.twig', array(
+        return $this->render('trabajo/new.html.twig', array(
+            'category' => $category,
             'trabajo' => $trabajo,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a trabajo entity.
-     *
-     */
-    public function showAction(Trabajo $trabajo)
+    private function retrieveForm(Category $category, Trabajo $trabajo)
     {
-        $deleteForm = $this->createDeleteForm($trabajo);
-
-        return $this->render('monografiagrado/show.html.twig', array(
-            'trabajo' => $trabajo,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        if($category->getType() == Category::PUBLICACION){
+            return $this->createForm('AppBundle\Form\PublicacionType', $trabajo);
+        }
+        return $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
     }
 
     /**
@@ -71,16 +74,16 @@ class MonografiagradoController extends Controller
     public function editAction(Request $request, Trabajo $trabajo)
     {
         $deleteForm = $this->createDeleteForm($trabajo);
-        $editForm = $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
+        $editForm = $this->retrieveForm($trabajo->getCategory(), $trabajo);//$this->createForm('AppBundle\Form\TrabajoType', $trabajo);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_monografiagrado_edit', array('id' => $trabajo->getId()));
+            return $this->redirectToRoute('admin_trabajos_edit', array('id' => $trabajo->getId()));
         }
 
-        return $this->render('monografiagrado/edit.html.twig', array(
+        return $this->render('trabajo/edit.html.twig', array(
             'trabajo' => $trabajo,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -95,14 +98,14 @@ class MonografiagradoController extends Controller
     {
         $form = $this->createDeleteForm($trabajo);
         $form->handleRequest($request);
-
+        $slug = $trabajo->getCategory()->getSlug();
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($trabajo);
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_monografiagrado_index');
+        return $this->redirectToRoute('admin_trabajos_index', array('slug' => $slug));
     }
 
     /**
@@ -115,7 +118,7 @@ class MonografiagradoController extends Controller
     private function createDeleteForm(Trabajo $trabajo)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_monografiagrado_delete', array('id' => $trabajo->getId())))
+            ->setAction($this->generateUrl('admin_trabajos_delete', array('id' => $trabajo->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

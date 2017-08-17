@@ -1,11 +1,8 @@
 {% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
 
-{% block title %}AppBundle:AdminFacturas:showOk{% endblock %}
+{% block title %}Categorias{% endblock %}
 {% block javascripts %}
-{#
-<script type="text/javascript" src="{{ asset('bundles/rsantellansitio/boostrap/js/plugins/dataTables/jquery.dataTables.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/rsantellansitio/boostrap/js/plugins/dataTables/dataTables.bootstrap.js') }}"></script>
-#}
+
 <script src="{{ asset('bundles/maithcommonadmin/admin/vendor/chosen/chosen.jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bundles/maithcommonadmin/admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript">
@@ -48,28 +45,34 @@ $(document).ready(function () {
 {% endblock %}
 {% block body %}
 <section class="panel panel-color">
-  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Publicaciones</header>
+  <header class="panel-heading text-uppercase"><i class="fa fa-lg fa-cogs"></i>Monografias Grado</header>
   <div class="panel-body">
     <div class="table-responsive no-border">
         <table class="table table-bordered table-striped mg-t datatable dataTable">
             <thead>
                 <tr>
-                    <th>Autores</th>
-                    <th>Description</th>
-                    <th>Year</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-            {% for trabajo in trabajos %}
+            {% for category in categories %}
                 <tr>
-                    <td>{{ trabajo.authors }}</td>
-                    <td>{{ trabajo.description }}</td>
-                    <td>{{ trabajo.year }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        {% if category.type == constant('PUBLICACION', category) %}
+                            Publicación
+                        {% elseif category.type == constant('MONOGRAFIA', category) %}
+                            Monografía
+                        {% elseif category.type == constant('FUENTES', category) %}
+                            Fuentes
+                        {% endif %}
+                    </td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('admin_publicaciones_edit', { 'id': trabajo.id }) }}" class="btn btn-success">Editar</a>
+                                <a href="{{ path('admin_category_edit', { 'id': category.id }) }}" class="btn btn-success">Editar</a>
                             </li>
                         </ul>
                     </td>
@@ -80,12 +83,10 @@ $(document).ready(function () {
 
         <ul>
             <li>
-                <a href="{{ path('admin_publicaciones_new') }}" class="btn btn-info">Crear publicación</a>
+                <a href="{{ path('admin_category_new') }}" class="btn btn-info">Crear categoria</a>
             </li>
         </ul>
     </div>
   </div>
 </section>
-
-    
 {% endblock %}

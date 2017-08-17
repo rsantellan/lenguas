@@ -1,0 +1,43 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/maithcommonimage/css/maithalbums.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/maithcommonadmin/css/colorbox.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script type="text/javascript" src="{{ asset('bundles/maithcommonadmin/js/jquery.colorbox-min.js') }}"></script>    
+  <script type="text/javascript" src="{{ asset('bundles/maithcommonimage/js/imagesManager.js') }}"></script>    
+{% endblock %}
+{% block title %}Editar elemento de {{category.name}}{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+        <section class="panel panel-color">
+        <header class="panel-heading text-uppercase"><i class="fa fa-pencil-square-o"></i>Editar elemento de {{ trabajo.category.name}}</header>
+        {% if trabajo.category.type == constant('PUBLICACION', trabajo.category) %}
+            {% include 'trabajo/_completeForm.html.twig' with { 'form' : edit_form } %}
+        {% else %}
+            {% include 'trabajo/_basicForm.html.twig' with { 'form' : edit_form } %}
+        {% endif %}
+        </section>
+    </div>
+</div>
+<div class="row">
+  {{ render(controller('MaithCommonAdminBundle:Albums:albumsData', {'id': edit_form.vars.value.id, 'objectclass' : edit_form.vars.value.fullClassName }))}}
+<hr/>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <a href="{{ path('admin_trabajos_index', {'slug' : trabajo.category.slug }) }}" class="btn btn-success" style="float: left; margin: 0!important;">
+            <i class="fa fa-arrow-left"></i>Volver al listado
+        </a>
+            <div class="pull-right">  
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-warning" value="Borrar elemento">
+            {{ form_end(delete_form) }}
+            </div>
+    </div>
+</div>
+{% endblock %}

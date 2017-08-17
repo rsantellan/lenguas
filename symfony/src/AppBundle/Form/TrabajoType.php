@@ -13,7 +13,7 @@ class TrabajoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('authors')->add('description')->add('type')->add('year');
+        $builder->add('authors')->add('description')->add('year');
     }
     
     /**

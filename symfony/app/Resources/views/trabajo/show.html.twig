@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Trabajo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ trabajo.id }}</td>
+            </tr>
+            <tr>
+                <th>Authors</th>
+                <td>{{ trabajo.authors }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ trabajo.description }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ trabajo.year }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_publicaciones_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_publicaciones_edit', { 'id': trabajo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
