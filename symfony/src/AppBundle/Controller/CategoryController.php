@@ -24,6 +24,7 @@ class CategoryController extends Controller
 
         return $this->render('category/index.html.twig', array(
             'categories' => $categories,
+            'activemenu' => 'category',
         ));
     }
 
@@ -48,6 +49,7 @@ class CategoryController extends Controller
         return $this->render('category/new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
+            'activemenu' => 'category',
         ));
     }
 
@@ -85,6 +87,7 @@ class CategoryController extends Controller
             'category' => $category,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'activemenu' => 'category',
         ));
     }
 
@@ -122,10 +125,12 @@ class CategoryController extends Controller
         ;
     }
 
-    public function menuAdminCategoriasAction()
+    public function menuAdminCategoriasAction(Request $request, $activemenu = '', $activesubmenu = '')
     {
         return $this->render('category/_menuAdmin.html.twig', array(
             'categories' => $this->get('lenguas.categories')->retrieveForMenu(),
+            'activemenu' => $activemenu,
+            'activesubmenu' => $activesubmenu,
         ));
     }
 }

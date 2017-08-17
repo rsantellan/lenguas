@@ -24,10 +24,10 @@ class TrabajoController extends Controller
         if (!$category) {
             throw $this->createNotFoundException('La categoria no existe');
         }
-        return $this->render('trabajo/index.html.twig', array(
-            'category' => $category,
-            'trabajos' => $this->get('lenguas.trabajos')->retrieveAllOfCategory($category),
-        ));
+        $data = $category->getMenuData();
+        $data['trabajos'] = $this->get('lenguas.trabajos')->retrieveAllOfCategory($category);
+        $data['category'] = $category;
+        return $this->render('trabajo/index.html.twig', $data);
     }
 
     /**
@@ -52,11 +52,11 @@ class TrabajoController extends Controller
 
             return $this->redirectToRoute('admin_trabajos_edit', array('id' => $trabajo->getId()));
         }
-        return $this->render('trabajo/new.html.twig', array(
-            'category' => $category,
-            'trabajo' => $trabajo,
-            'form' => $form->createView(),
-        ));
+        $data = $trabajo->getCategory()->getMenuData();
+        $data['trabajo'] = $trabajo;
+        $data['category'] = $category;
+        $data['form'] = $form->createView();
+        return $this->render('trabajo/new.html.twig', $data);
     }
 
     private function retrieveForm(Category $category, Trabajo $trabajo)
@@ -82,12 +82,11 @@ class TrabajoController extends Controller
 
             return $this->redirectToRoute('admin_trabajos_edit', array('id' => $trabajo->getId()));
         }
-
-        return $this->render('trabajo/edit.html.twig', array(
-            'trabajo' => $trabajo,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        $data = $trabajo->getCategory()->getMenuData();
+        $data['trabajo'] = $trabajo;
+        $data['edit_form'] = $editForm->createView();
+        $data['delete_form'] = $deleteForm->createView();
+        return $this->render('trabajo/edit.html.twig', $data);
     }
 
     /**

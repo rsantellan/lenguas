@@ -71,6 +71,19 @@ class LoadCategoriesFixture extends AbstractFixture implements OrderedFixtureInt
     	$categoryVocabulariosAfricanos->setType(Category::FUENTES);
     	$manager->persist($categoryVocabulariosAfricanos);
 
+        $categoryLenguasIndigenas = new Category();
+        $categoryLenguasIndigenas->setName('Lenguas Indigenas');
+        $categoryLenguasIndigenas->setLongname('Materiales vinculados a las lenguas indígenas en el Uruguay');
+        $categoryLenguasIndigenas->setType(Category::OTROS);
+        $manager->persist($categoryLenguasIndigenas);
+
+        $categoryLenguasAfricanas = new Category();
+        $categoryLenguasAfricanas->setName('Lenguas Africanas');
+        $categoryLenguasAfricanas->setLongname('Materiales vinculados a las lenguas indígenas en el Uruguay');
+        $categoryLenguasAfricanas->setDescription('<p class="section-sub">Para estudiar la presencia y el contacto de lenguas africanas así como la representación del habla de los africanos y sus descendientes en Montevideo en el siglo XIX, nos han sido de gran interés materiales y textos a los que accedimos a través de Ayestarán (1953), Goldman (1997, 2008a, 2008b y 2008c), Montaño (1997, 2008), etc. Divulgamos aquí fotografías o escaneos de los originales de estos textos, que se conservan en la Biblioteca Nacional[1], ya que el acceso directo a los originales permite un análisis lingüístico más fiable.</p>');
+        $categoryLenguasAfricanas->setType(Category::OTROS);
+        $manager->persist($categoryLenguasAfricanas);
+
     	$manager->flush();
     	
     	$this->addReference('category-publicaciones', $categoryPublicaciones);
@@ -79,7 +92,9 @@ class LoadCategoriesFixture extends AbstractFixture implements OrderedFixtureInt
     	$this->addReference('category-glosario-obras', $categoryGlosarioObras);
     	$this->addReference('category-vocabularios-independientes', $categoryVocabulariosIndependientes);
     	$this->addReference('category-vocabularios-riograndenses', $categoryVocabulariosRiograndenses);
-    	$this->addReference('category-vocabularios-africanos', $categoryVocabulariosAfricanos);
+        $this->addReference('category-vocabularios-africanos', $categoryVocabulariosAfricanos);
+        $this->addReference('category-lenguas-indigenas', $categoryLenguasIndigenas);
+    	$this->addReference('category-lenguas-africanas', $categoryLenguasAfricanas);
     }
 
     public function setContainer(ContainerInterface $container = null)

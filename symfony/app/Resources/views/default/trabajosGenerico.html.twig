@@ -41,12 +41,7 @@
                   </div>
                   <div id="basic-{{ key }}" class="panel-collapse collapse {% if loop.first %}in{% endif %}">
                     {% for trabajo in data %}
-                    <div class="panel-body">
-                        <div><strong>{{ trabajo['trabajo'].authors }}{% if showYear %} ({{ trabajo['trabajo'].year }}){% endif %}</strong>. {{ trabajo['trabajo'].description }}</div>
-                        {% for file in trabajo['files'] %}
-                          <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red">{% trans %}publicaciones_descargar_archivo{% endtrans %}{% if trabajo['files'] | length > 0 %} {{ loop.index }}{% endif %}</a> {% if trabajo['files'] | length > 0 %} </br></br>{% endif %}
-                        {% endfor %}
-                    </div>
+                      {% include 'default/_trabajoRowContainer.html.twig' with {'trabajo': trabajo} %}
                     {% if data | length > 1 and not loop.last %}<hr/>{% endif %}
                     {% endfor %}
                   </div>

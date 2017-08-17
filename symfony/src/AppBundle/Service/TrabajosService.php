@@ -53,12 +53,24 @@ class TrabajosService
     }
 
 
-    public function doSearch($keyword)
+    public function doSearch($keyword, $mediaAlbumService = null)
     {
-        $dql = 'select t from AppBundle:Trabajo t where t.authors like :authors or t.description like :description or t.year like :year order by t.category';
+        $dql = 'select t,c from AppBundle:Trabajo t join t.category c where t.authors like :authors or t.description like :description or t.year like :year order by t.category';
         $searchWord = '%'.$keyword.'%';
-        return $this->em->createQuery($dql)
+        $data = $this->em->createQuery($dql)
                         ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])
                         ->getResult();
+        $returnData = [];
+        foreach($data as $trabajo){
+            if(!isset($returnData[$trabajo->getCategory()->getName()])){
+                $returnData[$trabajo->getCategory()->getName()] = [];
+            }
+            $returnData[$trabajo->getCategory()->getName()][] = $trabajo;;
+        }
+        $orderByLetter = [];
+        foreach($returnData as $name => $trabajos){
+            $orderByLetter[$name] = $this->sortTrabajosPerLetter($trabajos, $mediaAlbumService);
+        }
+        return $orderByLetter;
     }
 }

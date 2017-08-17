@@ -19,13 +19,19 @@
 		{% endif %}
 	</ul>
 </li>
-<li>
+<li class="{% if (activemenu is defined) and activemenu == 'category' %}active{%endif%}">
 	<a href="{{ path('admin_category_index')}}">
 		<i class="fa fa-file-text-o"></i>
 		<span>Categorias</span>
 	</a>
 </li>
-{{ render(controller('AppBundle:Category:menuAdminCategorias')) }}
+{% if not activemenu is defined %}
+    {% set activemenu = '' %}
+{% endif %}
+{% if not activesubmenu is defined %}
+    {% set activesubmenu = '' %}
+{% endif %}
+{{ render(controller('AppBundle:Category:menuAdminCategorias', {'activemenu' : activemenu, 'activesubmenu' : activesubmenu})) }}
 <li>
 	<a href="{{ path('admin_documentos_index')}}">
 		<i class="fa fa-file-text-o"></i>

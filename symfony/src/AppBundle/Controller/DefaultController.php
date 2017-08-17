@@ -71,35 +71,6 @@ class DefaultController extends Controller
         ]);
     }
 
-    private function getActiveMenuFromCategory(Category $category)
-    {
-      if($category->getType() == Category::PUBLICACION){
-        return [
-            'activemenu' => 'publicaciones',
-            'activesubmenu' => $category->getName(),
-            'header' => 'publicaciones',
-            'showYear' => true,
-        ];
-      }
-      if($category->getType() == Category::MONOGRAFIA){
-        return [
-            'activemenu' => 'monografias',
-            'activesubmenu' => $category->getName(),
-            'header' => 'monografias',
-            'showYear' => false,
-        ];
-      }
-      if($category->getType() == Category::FUENTES){
-        return [
-            'activemenu' => 'fuentes',
-            'activesubmenu' => $category->getName(),
-            'header' => 'fuentes',
-            'showYear' => false,
-        ];
-      }
-      return [];
-    }
-
     public function genericosAction(Request $request, $slug)
     {
       $category = $this->get('lenguas.categories')->retrieveBySlug($slug);
@@ -107,7 +78,7 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('La categoria no existe');
       }
       $trabajos = $this->get('lenguas.trabajos')->retrieveAllOfCategoryPerLetter($category, $this->get('media_album_service'));
-      $returnData = $this->getActiveMenuFromCategory($category);
+      $returnData = $category->getMenuData();
       $returnData['trabajos'] = $trabajos;
       $returnData['category'] = $category;
       return $this->render('default/trabajosGenerico.html.twig', $returnData);
@@ -145,12 +116,14 @@ class DefaultController extends Controller
     public function buscarAction(Request $request)
     {
         $keyword = $request->query->get('search');
-        $trabajos = $this->get('lenguas.trabajos')->doSearch($keyword);
+        $trabajos = $this->get('lenguas.trabajos')->doSearch($keyword, $this->get('media_album_service'));
         $documentos = $this->get('lenguas.documentos')->doSearch($keyword);
-        var_dump($keyword);
-        var_dump(count($trabajos));
-        var_dump(count($documentos));
-        die;
+        return $this->render('default/busqueda.html.twig', [
+            'activemenu' => 'busqueda',
+            'keyword' => $keyword,
+            'trabajos' => $trabajos,
+            'documentos' => $documentos,
+        ]);
     }
 
     public function downloadOriginalFileAction($id)

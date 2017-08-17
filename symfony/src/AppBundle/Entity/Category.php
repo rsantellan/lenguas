@@ -38,7 +38,7 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="longname", type="string", length=255)
+     * @ORM\Column(name="longname", type="string", length=255, nullable=true)
      */
     private $longname;
 
@@ -273,5 +273,66 @@ class Category
     public function getLongname()
     {
         return $this->longname;
+    }
+
+    public function getMenuName()
+    {
+        if($this->getType() == Category::PUBLICACION){
+          return 'publicaciones';
+        }
+        if($this->getType() == Category::MONOGRAFIA){
+          return 'monografias';
+        }
+        if($this->getType() == Category::FUENTES){
+          return 'fuentes';
+        }
+        if($this->getType() == Category::OTROS){
+          return 'otros';
+        }
+        return $this->getType();
+    }
+
+    public function getMenuShowYears()
+    {
+        if($this->getType() == Category::PUBLICACION){
+          return true;
+        }
+        if($this->getType() == Category::MONOGRAFIA){
+          return false;
+        }
+        if($this->getType() == Category::FUENTES){
+          return false;
+        }
+        if($this->getType() == Category::OTROS){
+          return false;
+        }
+        return false;
+    }
+
+    public function getMenuData(){
+        return [
+                'activemenu' => $this->getMenuName(),
+                'activesubmenu' => $this->getName(),
+                'header' => $this->getMenuName(),
+                'showYear' => $this->getMenuShowYears(),
+          ];
+    }
+
+    public static function getNameOfType($type)
+    {
+        $type = (int) $type;
+        if($type == Category::PUBLICACION){
+            return "publicaciones";
+        }
+        if($type == Category::MONOGRAFIA){
+            return "monografias";
+        }
+        if($type == Category::FUENTES){
+            return "fuentes";
+        }       
+        if($type == Category::OTROS){
+            return "otros";
+        }
+        return $type;
     }
 }

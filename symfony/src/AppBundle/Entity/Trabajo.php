@@ -164,4 +164,9 @@ class Trabajo
     {
         return $this->category;
     }
+
+    public function getShowYear()
+    {
+        return $this->getCategory()->getMenuShowYears();
+    }
 }

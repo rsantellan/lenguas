@@ -28,7 +28,7 @@ class CategoriesService
     	foreach($data as $category){
     		$key = $category['type'];
     		if($keyIsName){
-    			$key = $this->getNameOfType($category['type']);
+    			$key = Category::getNameOfType($category['type']);
     		}
     		if(!isset($returnData[$key])){
     			$returnData[$key] = [];
@@ -40,26 +40,8 @@ class CategoriesService
 
 	public function retrieveForMenuByType($type)
     {
-    	$dql = 'select c.id, c.name, c.slug, c.type from AppBundle:Category c where c.type = :type order by c.type asc, c.orden asc';
+    	$dql = 'select c.id, c.name, c.slug, c.type, c.longname from AppBundle:Category c where c.type = :type order by c.type asc, c.orden asc';
     	return  $this->em->createQuery($dql)->setParameters(['type' => $type])->getResult();
-	}
-
-	public function getNameOfType($type)
-	{
-		$type = (int) $type;
-		if($type == Category::PUBLICACION){
-			return "Publicaciones";
-		}
-		if($type == Category::MONOGRAFIA){
-			return "Monografias";
-		}
-		if($type == Category::FUENTES){
-			return "Fuentes";
-		}		
-		if($type == Category::OTROS){
-			return "otros";
-		}
-		return ".";
 	}
 
 	public function retrieveBySlug($slug)
