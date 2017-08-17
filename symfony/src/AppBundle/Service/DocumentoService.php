@@ -5,7 +5,6 @@ namespace AppBundle\Service;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Logger;
 
-
 class DocumentoService
 {
     protected $em;
@@ -21,19 +20,21 @@ class DocumentoService
 
     public function retrieveAllDocumentsForMenu()
     {
-    	$dql = 'select d.id, d.title, d.slug, d.orden from AppBundle:Documento d order by d.orden asc';
-    	return $this->em->createQuery($dql)->getResult();
+        $dql = 'select d.id, d.title, d.slug, d.orden from AppBundle:Documento d order by d.orden asc';
+
+        return $this->em->createQuery($dql)->getResult();
     }
 
     public function retrieveBySlug($slug)
     {
-    	return $this->em->getRepository('AppBundle:Documento')->findOneBySlug($slug);
+        return $this->em->getRepository('AppBundle:Documento')->findOneBySlug($slug);
     }
 
     public function doSearch($keyword)
     {
         $dql = 'select d from AppBundle:Documento d where d.title like :title or d.body like :body';
         $searchWord = '%'.$keyword.'%';
+
         return $this->em->createQuery($dql)
                         ->setParameters(['title' => $searchWord, 'body' => $searchWord])
                         ->getResult();

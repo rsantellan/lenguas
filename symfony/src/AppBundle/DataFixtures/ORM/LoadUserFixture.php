@@ -36,7 +36,7 @@ class LoadUserFixture extends AbstractFixture implements OrderedFixtureInterface
         $roleTranslator->setName('ROLE_VIEW_TRANSLATOR');
         $roleTranslator->setDescription('Translator role');
         $manager->persist($roleTranslator);
-        
+
         $userManager = $this->container->get('fos_user.user_manager');
 
         $mailuser = $userManager->createUser();

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Documento
+ * Documento.
  *
  * @ORM\Table(name="lenguas_documento")
  * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
@@ -32,8 +32,8 @@ class Documento
     /**
      * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(type="string", unique=true)
-    */
-    protected $slug;    
+     */
+    protected $slug;
 
     /**
      * @var string
@@ -49,9 +49,8 @@ class Documento
      */
     private $orden;
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -61,7 +60,7 @@ class Documento
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -75,7 +74,7 @@ class Documento
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -85,7 +84,7 @@ class Documento
     }
 
     /**
-     * Set body
+     * Set body.
      *
      * @param string $body
      *
@@ -99,7 +98,7 @@ class Documento
     }
 
     /**
-     * Get body
+     * Get body.
      *
      * @return string
      */
@@ -109,9 +108,9 @@ class Documento
     }
 
     /**
-     * Set orden
+     * Set orden.
      *
-     * @param integer $orden
+     * @param int $orden
      *
      * @return Documento
      */
@@ -123,7 +122,7 @@ class Documento
     }
 
     /**
-     * Get orden
+     * Get orden.
      *
      * @return int
      */
@@ -139,11 +138,11 @@ class Documento
 
     public function retrieveAlbums()
     {
-      return array("portada", "archivos", "normas");
-    }        
+        return array('portada', 'archivos', 'normas');
+    }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
      *
@@ -157,7 +156,7 @@ class Documento
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
      * @return string
      */

@@ -2,10 +2,9 @@
 
 namespace AppBundle\Service;
 
-#use Doctrine\ORM\EntityManager;
+//use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Logger;
-
 use AppBundle\Entity\Trabajo;
 use AppBundle\Entity\Category;
 
@@ -25,6 +24,7 @@ class TrabajosService
     public function retrieveAllOfCategory(Category $category)
     {
         $dql = 'select t from AppBundle:Trabajo t where t.category = :category order by t.authors asc, t.year asc';
+
         return $this->em->createQuery($dql)->setParameters(['category' => $category])->getResult();
     }
 
@@ -33,25 +33,23 @@ class TrabajosService
         return $this->sortTrabajosPerLetter($this->retrieveAllOfCategory($category), $mediaAlbumService);
     }
 
-
     private function sortTrabajosPerLetter($trabajos, $mediaAlbumService = null)
     {
         $returnData = [];
-        foreach($trabajos as $trabajo)
-        {
+        foreach ($trabajos as $trabajo) {
             $letter = strtoupper(substr($trabajo->getAuthors(), 0, 1));
-            if(!isset($returnData[$letter])){
+            if (!isset($returnData[$letter])) {
                 $returnData[$letter] = [];
             }
             $toSend = ['trabajo' => $trabajo];
-            if($mediaAlbumService != null){
+            if ($mediaAlbumService != null) {
                 $toSend['files'] = $mediaAlbumService->retrieveAllFilesByObjectAndAlbum($trabajo->getFullClassName(), $trabajo->getId(), 'files');
             }
             $returnData[$letter][] = $toSend;
         }
+
         return $returnData;
     }
-
 
     public function doSearch($keyword, $mediaAlbumService = null)
     {
@@ -61,16 +59,17 @@ class TrabajosService
                         ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])
                         ->getResult();
         $returnData = [];
-        foreach($data as $trabajo){
-            if(!isset($returnData[$trabajo->getCategory()->getName()])){
+        foreach ($data as $trabajo) {
+            if (!isset($returnData[$trabajo->getCategory()->getName()])) {
                 $returnData[$trabajo->getCategory()->getName()] = [];
             }
-            $returnData[$trabajo->getCategory()->getName()][] = $trabajo;;
+            $returnData[$trabajo->getCategory()->getName()][] = $trabajo;
         }
         $orderByLetter = [];
-        foreach($returnData as $name => $trabajos){
+        foreach ($returnData as $name => $trabajos) {
             $orderByLetter[$name] = $this->sortTrabajosPerLetter($trabajos, $mediaAlbumService);
         }
+
         return $orderByLetter;
     }
 }

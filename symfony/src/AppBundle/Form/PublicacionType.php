@@ -2,9 +2,7 @@
 
 namespace AppBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class PublicacionType extends TrabajoType
 {
@@ -15,5 +13,4 @@ class PublicacionType extends TrabajoType
     {
         $builder->add('authors')->add('description')->add('year');
     }
-    
 }

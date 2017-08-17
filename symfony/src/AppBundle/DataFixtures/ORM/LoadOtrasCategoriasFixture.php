@@ -26,7 +26,8 @@ class LoadOtrasCategoriasFixture extends AbstractFixture implements OrderedFixtu
         return 7;
     }
 
-    private function allDataIndigena(){
+    private function allDataIndigena()
+    {
         $data = [];
         $data[] = ['author' => 'Breviario de etnología y arqueología del Uruguay.', 'year' => 2012, 'description' => 'José Joaquín Figueira. Tomado del “Boletín histórico del Estado Mayor General del Ejército”, Nº 104, 105, página 29-68 (en <a href="http://www.ejercito.mil.uy" target="blank">http://www.ejercito.mil.uy</a>). Montevideo, 1965.'];
         $data[] = ['author' => 'Las lenguas indígenas del Uruguay.', 'year' => 2012, 'description' => 'Juan Carlos Sabat Pebet y José Joaquín Figueira.  Tomado del “Boletín histórico del Estado Mayor General del Ejército”, Nº 120, 123, página 188-220 (en <a href="http://www.ejercito.mil.uy" target="blank">http://www.ejercito.mil.uy</a>). Montevideo, 1969.'];
@@ -34,13 +35,13 @@ class LoadOtrasCategoriasFixture extends AbstractFixture implements OrderedFixtu
         $data[] = ['author' => 'Nuevos elementos acerca de la lengua charrúa.', 'year' => 2012, 'description' => 'J.P Rona. Facultad de Humanidades y Ciencias. Departamento de Lingüística. Montevideo, 1964. Páginas. 7-28.'];
         $data[] = ['author' => 'Transcripción tipografica y exégesis filológica provisional del Códice Vilardebó.', 'year' => 2012, 'description' => 'S. Perea y Alonso. “Boletín de Filología”, tomo II, números 6-7, 1938, Instituto de Estudios Superiores (7-18).'];
         $data[] = ['author' => 'Un vocabulario charrúa desconocido.', 'year' => 2012, 'description' => 'Juan Carlos Gómez Haedo. “Boletín de Filología”, tomo I, números 4-5, 1937, Instituto de Estudios Superiores (323-350).'];
-        
 
         return $data;
     }
 
-    private function allDataAfricana(){
-    	$data = [];
+    private function allDataAfricana()
+    {
+        $data = [];
         $data[] = ['author' => 'Comparsa Pobres Negros Orientales, 1876. Tango. Título: “Mis Caprichos”.', 'year' => 2012, 'description' => 'Tomado de El Carnaval. Colección de Canciones de la mayor parte de las comparsas carnavalescas por Figaro o sea Julio Figueroa. Establecimiento tipográfico á vapor La Idea, Montevideo, Año VI, Nº 6, páginas 32-33. Material conservado en la Sala Uruguay en la Biblioteca Nacional (Montevideo, Uruguay).'];
         $data[] = ['author' => 'Comparsa Pobres Negros Orientales, 1876. Tango: sin título.', 'year' => 2012, 'description' => 'Tomado de El Carnaval. Colección de Canciones de la mayor parte de las comparsas carnavalescas por Figaro o sea Julio Figueroa. Establecimiento tipográfico á vapor La Idea, Montevideo, Año VI, Nº 6, 1876, páginas 33-35. Material conservado en la Sala Uruguay en la Biblioteca Nacional (Montevideo, Uruguay).'];
         $data[] = ['author' => 'Comparsa Negros Lubolos, 1877. Despedida.', 'year' => 2012, 'description' => 'Tomado en El Carnaval. Colección de Canciones de la mayor parte de las comparsas carnavalescas por Figaro o sea Julio Figueroa, Establecimiento tipográfico á vapor La Idea, Montevideo, Año VII, Nº 7, 1877, páginas 13-14. Material conservado en la Sala Uruguay en la Biblioteca Nacional (Montevideo, Uruguay).'];
@@ -65,14 +66,13 @@ class LoadOtrasCategoriasFixture extends AbstractFixture implements OrderedFixtu
         $data[] = ['author' => 'La Atalaya de Ulises.', 'year' => 2012, 'description' => 'Transcripciones de Ciertas cantinelas escuchadas en los candombes montevideanos. Impresora y Editora Renacimiento. Montevideo, 1922. Citado en Carvalho Neto (1965: 304-5).'];
         $data[] = ['author' => 'La Conservación, Montevideo, 1872.', 'year' => 2012, 'description' => 'Material conservado en la Biblioteca Nacional (Montevideo, Uruguay).'];
         $data[] = ['author' => 'La Opinión Nacional. “Discurso”.', 'year' => 2012, 'description' => 'Miércoles 10 de enero de 1886, Montevideo, Año I, Nº 20, columna 3ª. Material conservado en la Biblioteca Nacional (Montevideo, Uruguay).'];
-        
 
-    	return $data;
+        return $data;
     }
 
     public function load(ObjectManager $manager)
     {
-        foreach($this->allDataIndigena() as $data){
+        foreach ($this->allDataIndigena() as $data) {
             $trabajo = new Trabajo();
             $trabajo->setAuthors($data['author']);
             $trabajo->setDescription($data['description']);
@@ -80,13 +80,13 @@ class LoadOtrasCategoriasFixture extends AbstractFixture implements OrderedFixtu
             $manager->persist($trabajo);
         }
 
-    	foreach($this->allDataAfricana() as $data){
-    		$trabajo = new Trabajo();
-    		$trabajo->setAuthors($data['author']);
-    		$trabajo->setDescription($data['description']);
+        foreach ($this->allDataAfricana() as $data) {
+            $trabajo = new Trabajo();
+            $trabajo->setAuthors($data['author']);
+            $trabajo->setDescription($data['description']);
             $trabajo->setCategory($this->getReference('category-lenguas-africanas'));
-    		$manager->persist($trabajo);
-    	}
+            $manager->persist($trabajo);
+        }
         $manager->flush();
     }
 

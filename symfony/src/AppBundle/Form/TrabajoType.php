@@ -15,14 +15,14 @@ class TrabajoType extends AbstractType
     {
         $builder->add('authors')->add('description')->add('year');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Trabajo'
+            'data_class' => 'AppBundle\Entity\Trabajo',
         ));
     }
 
@@ -33,6 +33,4 @@ class TrabajoType extends AbstractType
     {
         return 'appbundle_trabajo';
     }
-
-
 }

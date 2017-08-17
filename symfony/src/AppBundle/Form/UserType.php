@@ -15,14 +15,14 @@ class UserType extends AbstractType
     {
         $builder->add('email')->add('user_roles');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\User'
+            'data_class' => 'AppBundle\Entity\User',
         ));
     }
 
@@ -33,6 +33,4 @@ class UserType extends AbstractType
     {
         return 'appbundle_user';
     }
-
-
 }

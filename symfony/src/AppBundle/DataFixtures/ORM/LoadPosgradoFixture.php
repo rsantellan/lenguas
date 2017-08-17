@@ -26,20 +26,23 @@ class LoadPosgradoFixture extends AbstractFixture implements OrderedFixtureInter
         return 4;
     }
 
-    private function allData(){
-    	$data = [];
-    	$data[] = ['author' => 'DA SILVA, ALINEA S.', 'year' => 2012, 'description' => '“Entre correspondências e interferências: o tratamento na região fronteiriça Uruguai-Brasil no século XIX.'];
-    	return $data;
+    private function allData()
+    {
+        $data = [];
+        $data[] = ['author' => 'DA SILVA, ALINEA S.', 'year' => 2012, 'description' => '“Entre correspondências e interferências: o tratamento na região fronteiriça Uruguai-Brasil no século XIX.'];
+
+        return $data;
     }
+
     public function load(ObjectManager $manager)
     {
-    	foreach($this->allData() as $data){
-    		$trabajo = new Trabajo();
-    		$trabajo->setAuthors($data['author']);
-    		$trabajo->setDescription($data['description']);
+        foreach ($this->allData() as $data) {
+            $trabajo = new Trabajo();
+            $trabajo->setAuthors($data['author']);
+            $trabajo->setDescription($data['description']);
             $trabajo->setCategory($this->getReference('category-trabajos-posgrado'));
-    		$manager->persist($trabajo);
-    	}
+            $manager->persist($trabajo);
+        }
         $manager->flush();
     }
 

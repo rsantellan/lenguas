@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Trabajo
+ * Trabajo.
  *
  * @ORM\Table(name="lenguas_trabajo")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TrabajoRepository")
@@ -49,7 +49,7 @@ class Trabajo
     private $category;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -59,7 +59,7 @@ class Trabajo
     }
 
     /**
-     * Set authors
+     * Set authors.
      *
      * @param string $authors
      *
@@ -73,7 +73,7 @@ class Trabajo
     }
 
     /**
-     * Get authors
+     * Get authors.
      *
      * @return string
      */
@@ -83,7 +83,7 @@ class Trabajo
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -97,7 +97,7 @@ class Trabajo
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -106,11 +106,10 @@ class Trabajo
         return $this->description;
     }
 
-
     /**
-     * Set year
+     * Set year.
      *
-     * @param integer $year
+     * @param int $year
      *
      * @return Trabajo
      */
@@ -122,9 +121,9 @@ class Trabajo
     }
 
     /**
-     * Get year
+     * Get year.
      *
-     * @return integer
+     * @return int
      */
     public function getYear()
     {
@@ -138,11 +137,11 @@ class Trabajo
 
     public function retrieveAlbums()
     {
-      return array("files");
-    }    
+        return array('files');
+    }
 
     /**
-     * Set category
+     * Set category.
      *
      * @param \AppBundle\Entity\Category $category
      *
@@ -156,7 +155,7 @@ class Trabajo
     }
 
     /**
-     * Get category
+     * Get category.
      *
      * @return \AppBundle\Entity\Category
      */

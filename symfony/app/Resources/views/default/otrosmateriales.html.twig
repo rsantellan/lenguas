@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                    <li class="active">Otros materiales</li>
+                    <li class="active">{% trans %}otros_materiales_titulo{% endtrans %}</li>
                 </ol>
             </div>
         </div>
@@ -18,8 +18,7 @@
     <div class="container">
 
       <div class="mb-80">
-          <h2 class="section-title text-capitalize section-sub">Otros Materiales</h2>
-          <p class="section-sub">Se divulgan aquí una serie de materiales de interés para el estudio de los componentes lingüísticos indígenas y africanos en la conformación del español del Uruguay.</p>
+          {% trans %}otros_materiales_texto{% endtrans %} 
           <p class="section-sub">
             {% for category in categories %}
           	<a href="{{ path('publicaciones_genericos', {'slug' : category.slug }) }}">

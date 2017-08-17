@@ -26,8 +26,9 @@ class LoadDocumentosFixture extends AbstractFixture implements OrderedFixtureInt
         return 6;
     }
 
-    private function allData(){
-    	$data = [];
+    private function allData()
+    {
+        $data = [];
         $data[] = ['title' => 'Documentos siglo XVIII', 'body' => '<h2 class="section-title text-uppercase section-sub">Presentación</h2>
                   <p class="section-sub">Este volumen recoge textos escritos durante el siglo XVIII por habitantes del territorio que ahora llamamos Uruguay.</p>
                   <p class="section-sub">El español en Hispanoamérica es la lengua de cultura, la lengua de la administración, de la educación, de la religión y también la de los afectos y la de las tradiciones. Es esa lengua la que nos permite reconocernos como iguales pero también como diferentes y el conocimiento de subhistoria, como el conocimiento arqueológico, como el conocimiento genético, permite y permitirá ahondar en la historia de nuestra identidad.</p>
@@ -39,21 +40,23 @@ class LoadDocumentosFixture extends AbstractFixture implements OrderedFixtureInt
                   <p class="section-sub">Desafortunadamente, solo podemos saber cómo sucedieron esos procesos a través de la escritura, por la obvia razón de que desde hace solo unas pocas generaciones es posible registrar la voz humana. Por lo tanto, el acercamiento a la historia lingüística en general, y, por tanto, a la historia lingüística de Uruguay tiene esa limitación.</p>
                   <p class="section-sub">El conjunto de documentos que aquí presentamos permiten, entonces, con las restricciones expresadas, una aproximación al período del siglo XIX de la lengua española en la zona del actual Uruguay.</p>
                   <p class="section-sub">Desde la década del 90, se viene desarrollando en el Instituto de Lingüística de la Facultad de Humanidades y Ciencias de la Educación (Universidad de la República, Montevideo) una línea de trabajo cuyo objetivo central es el estudio de la historia del español en el Uruguay. Esta tuvo como impulso inicial la propuesta de la <I>Comisión para el estudio del español de América</I> de la Asociación de Lingüística y Filología de América Latina (ALFAL), que auspició la creación de un proyecto coordinado entre diferentes países para el estudio de la historia del español en América1. Resultado de estos esfuerzos coordinados son las compilaciones de documentación americana de Fontanella de Weinberg (1993), Rojas (2000, 2001 y 2008)...</p>'];
-    	$data[] = ['title' => 'Documentos portugués siglo XIX', 'body' => '<h2 class="section-title text-uppercase section-sub">Prólogo</h2>
+        $data[] = ['title' => 'Documentos portugués siglo XIX', 'body' => '<h2 class="section-title text-uppercase section-sub">Prólogo</h2>
                   <p class="section-sub">Todo aquello que existe hoy, en este momento, no fue siempre así. En el supuesto caso de que esa existencia actual pueda relacionarse con una anterior, diferente, la tarea del investigador no solo será la de observar cómo se llega del estadio anterior al actual, sino, en primer lugar, identificar ambas “existencias” como estadios diferentes de una sola entidad. Esta tarea es retrospectiva; la anterior, prospectiva.</p>
                   <p class="section-sub">A grandes rasgos, es ésta la tarea del historiador; si del historiador de la lengua se trata, el problema consiste en identificar y analizar, en los contextos lingüísticos y socioculturales pertinentes, las formas lingüísticas y las funciones que estas cumplen a lo largo del período en estudio.</p>
                   <p class="section-sub">Por otro lado, la afirmación que sigue parece de Perogrullo: para reconstruir el (un) pasado (y, en consecuencia, identificar lo actual como evolución y eventual culminación del/de un pasado) es necesario trabajar sobre materiales que actúen como testigos de aquellas épocas pasadas; en otras palabras, trabajar sobre “documentos”.</p>
                   <p class="section-sub">Obviamente, tales “documentos” no están disponibles como tales: es necesario ir en su búsqueda, muchas veces navegando casi a oscuras y sin un destino final cierto; pero, y así sucede en la gran mayoría de los casos, de improviso aparece una lucecita, una punta de una madeja de la que, si empezamos a tirar (también sabiendo cómo), puede provocar una inusitada y sorprendente iluminación que empieza a clarificar ese pasado. He aquí, entonces, que Fulano de Tal o Mengano de Cual, que el Acontecimiento tal o el Episodio cual se nos hacen más cercanos, nos invaden, se transforman en nuestros coetáneos, nos hablan de igual a igual. Cuando tal cosa sucede, ya no podremos liberarnos de ellos...</p>'];
-    	return $data;
+
+        return $data;
     }
+
     public function load(ObjectManager $manager)
     {
-    	foreach($this->allData() as $data){
-    		$trabajo = new Documento();
-    		$trabajo->setTitle($data['title']);
-    		$trabajo->setBody($data['body']);
-    		$manager->persist($trabajo);
-    	}
+        foreach ($this->allData() as $data) {
+            $trabajo = new Documento();
+            $trabajo->setTitle($data['title']);
+            $trabajo->setBody($data['body']);
+            $manager->persist($trabajo);
+        }
         $manager->flush();
     }
 

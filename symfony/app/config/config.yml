@@ -8,7 +8,10 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: es
-
+    translation_languages:
+        - es
+    translation_bundles:
+        - TwigBundle
 framework:
     #esi: ~
     translator: { fallbacks: ['%locale%'] }

@@ -40,17 +40,6 @@
 	{% endif %}
 </li>
 {% endif %}
-{#
-<li>
-    <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
-    <ul class="dropdown">
-        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'indigenas' %}current{% endif %}">Repositorios lexicográficos</a></li>
-        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios independientes</a></li>
-        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios de voces de origen africano</a></li>
-        <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios riograndenses</a></li>
-    </ul>
-</li>
-#}
 {% if documents | length > 0 %}
 <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
     <ul class="dropdown">

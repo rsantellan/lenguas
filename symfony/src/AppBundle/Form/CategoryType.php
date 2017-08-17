@@ -25,20 +25,20 @@ class CategoryType extends AbstractType
             ->add('description')
             ->add('orden')
             ->add('type', ChoiceType::class, array(
-                'choices'  => $types,
+                'choices' => $types,
                 'choices_as_values' => true,
                 'choice_translation_domain' => false,
                 )
             );
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Category'
+            'data_class' => 'AppBundle\Entity\Category',
         ));
     }
 
@@ -49,6 +49,4 @@ class CategoryType extends AbstractType
     {
         return 'appbundle_category';
     }
-
-
 }

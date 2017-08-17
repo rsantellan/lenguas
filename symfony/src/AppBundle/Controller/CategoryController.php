@@ -8,13 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Category controller.
- *
  */
 class CategoryController extends Controller
 {
     /**
      * Lists all category entities.
-     *
      */
     public function indexAction()
     {
@@ -30,7 +28,6 @@ class CategoryController extends Controller
 
     /**
      * Creates a new category entity.
-     *
      */
     public function newAction(Request $request)
     {
@@ -55,7 +52,6 @@ class CategoryController extends Controller
 
     /**
      * Finds and displays a category entity.
-     *
      */
     public function showAction(Category $category)
     {
@@ -69,7 +65,6 @@ class CategoryController extends Controller
 
     /**
      * Displays a form to edit an existing category entity.
-     *
      */
     public function editAction(Request $request, Category $category)
     {
@@ -93,7 +88,6 @@ class CategoryController extends Controller
 
     /**
      * Deletes a category entity.
-     *
      */
     public function deleteAction(Request $request, Category $category)
     {

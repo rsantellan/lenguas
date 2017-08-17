@@ -13,7 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -32,7 +31,6 @@ class User extends BaseUser
         parent::__construct();
         $this->user_roles = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Add userRole.
@@ -199,5 +197,4 @@ class User extends BaseUser
 
         return implode(',', $rolesDescriptions);
     }
-
 }

@@ -8,13 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Documento controller.
- *
  */
 class DocumentoController extends Controller
 {
     /**
      * Lists all documento entities.
-     *
      */
     public function indexAction()
     {
@@ -29,7 +27,6 @@ class DocumentoController extends Controller
 
     /**
      * Creates a new documento entity.
-     *
      */
     public function newAction(Request $request)
     {
@@ -53,7 +50,6 @@ class DocumentoController extends Controller
 
     /**
      * Displays a form to edit an existing documento entity.
-     *
      */
     public function editAction(Request $request, Documento $documento)
     {
@@ -76,7 +72,6 @@ class DocumentoController extends Controller
 
     /**
      * Deletes a documento entity.
-     *
      */
     public function deleteAction(Request $request, Documento $documento)
     {

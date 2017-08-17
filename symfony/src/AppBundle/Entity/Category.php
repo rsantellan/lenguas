@@ -6,14 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Category
+ * Category.
  *
  * @ORM\Table(name="lenguas_category")
  * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
  */
 class Category
 {
-
     const PUBLICACION = 1;
     const MONOGRAFIA = 2;
     const FUENTES = 3;
@@ -52,8 +51,8 @@ class Category
     /**
      * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", unique=true)
-    */
-    protected $slug; 
+     */
+    protected $slug;
 
     /**
      * @var int
@@ -69,14 +68,14 @@ class Category
      * @ORM\Column(name="type", type="smallint")
      */
     private $type;
-    
+
     /**
      * @ORM\OneToMany(targetEntity="Trabajo", mappedBy="category")
      */
     private $trabajos;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -86,7 +85,7 @@ class Category
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -100,7 +99,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -110,7 +109,7 @@ class Category
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -124,7 +123,7 @@ class Category
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -134,9 +133,9 @@ class Category
     }
 
     /**
-     * Set orden
+     * Set orden.
      *
-     * @param integer $orden
+     * @param int $orden
      *
      * @return Category
      */
@@ -148,7 +147,7 @@ class Category
     }
 
     /**
-     * Get orden
+     * Get orden.
      *
      * @return int
      */
@@ -158,9 +157,9 @@ class Category
     }
 
     /**
-     * Set type
+     * Set type.
      *
-     * @param integer $type
+     * @param int $type
      *
      * @return Category
      */
@@ -172,9 +171,9 @@ class Category
     }
 
     /**
-     * Get type
+     * Get type.
      *
-     * @return integer
+     * @return int
      */
     public function getType()
     {
@@ -182,7 +181,7 @@ class Category
     }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
      *
@@ -196,7 +195,7 @@ class Category
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
      * @return string
      */
@@ -204,8 +203,9 @@ class Category
     {
         return $this->slug;
     }
+
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -213,7 +213,7 @@ class Category
     }
 
     /**
-     * Add trabajo
+     * Add trabajo.
      *
      * @param \AppBundle\Entity\Trabajo $trabajo
      *
@@ -227,7 +227,7 @@ class Category
     }
 
     /**
-     * Remove trabajo
+     * Remove trabajo.
      *
      * @param \AppBundle\Entity\Trabajo $trabajo
      */
@@ -237,7 +237,7 @@ class Category
     }
 
     /**
-     * Get trabajos
+     * Get trabajos.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -252,7 +252,7 @@ class Category
     }
 
     /**
-     * Set longname
+     * Set longname.
      *
      * @param string $longname
      *
@@ -266,7 +266,7 @@ class Category
     }
 
     /**
-     * Get longname
+     * Get longname.
      *
      * @return string
      */
@@ -277,39 +277,42 @@ class Category
 
     public function getMenuName()
     {
-        if($this->getType() == Category::PUBLICACION){
-          return 'publicaciones';
+        if ($this->getType() == self::PUBLICACION) {
+            return 'publicaciones';
         }
-        if($this->getType() == Category::MONOGRAFIA){
-          return 'monografias';
+        if ($this->getType() == self::MONOGRAFIA) {
+            return 'monografias';
         }
-        if($this->getType() == Category::FUENTES){
-          return 'fuentes';
+        if ($this->getType() == self::FUENTES) {
+            return 'fuentes';
         }
-        if($this->getType() == Category::OTROS){
-          return 'otros';
+        if ($this->getType() == self::OTROS) {
+            return 'otros';
         }
+
         return $this->getType();
     }
 
     public function getMenuShowYears()
     {
-        if($this->getType() == Category::PUBLICACION){
-          return true;
+        if ($this->getType() == self::PUBLICACION) {
+            return true;
         }
-        if($this->getType() == Category::MONOGRAFIA){
-          return false;
+        if ($this->getType() == self::MONOGRAFIA) {
+            return false;
         }
-        if($this->getType() == Category::FUENTES){
-          return false;
+        if ($this->getType() == self::FUENTES) {
+            return false;
         }
-        if($this->getType() == Category::OTROS){
-          return false;
+        if ($this->getType() == self::OTROS) {
+            return false;
         }
+
         return false;
     }
 
-    public function getMenuData(){
+    public function getMenuData()
+    {
         return [
                 'activemenu' => $this->getMenuName(),
                 'activesubmenu' => $this->getName(),
@@ -321,18 +324,19 @@ class Category
     public static function getNameOfType($type)
     {
         $type = (int) $type;
-        if($type == Category::PUBLICACION){
-            return "publicaciones";
+        if ($type == self::PUBLICACION) {
+            return 'publicaciones';
         }
-        if($type == Category::MONOGRAFIA){
-            return "monografias";
+        if ($type == self::MONOGRAFIA) {
+            return 'monografias';
         }
-        if($type == Category::FUENTES){
-            return "fuentes";
-        }       
-        if($type == Category::OTROS){
-            return "otros";
+        if ($type == self::FUENTES) {
+            return 'fuentes';
         }
+        if ($type == self::OTROS) {
+            return 'otros';
+        }
+
         return $type;
     }
 }

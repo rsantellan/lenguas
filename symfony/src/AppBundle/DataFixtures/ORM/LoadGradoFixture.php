@@ -26,8 +26,9 @@ class LoadGradoFixture extends AbstractFixture implements OrderedFixtureInterfac
         return 4;
     }
 
-    private function allData(){
-    	$data = [];
+    private function allData()
+    {
+        $data = [];
         $data[] = ['author' => 'AMODIO, MARIANA', 'year' => 2012, 'description' => '“La literatura como fuente para la Lingüística Histórica. Estudio del contacto histórico entre el español y el portugués. El caso de Pedro Leandro Ipuche, Serafín J. García y Julio C. da Rosa”.'];
         $data[] = ['author' => 'ALTESOR, MARÍA INÉS', 'year' => 2012, 'description' => '“Moda y vestimenta a través del léxico: el léxico de la vestimenta en el Montevideo del ochocientos”.'];
         $data[] = ['author' => 'BÉRTOLA, CECILIA', 'year' => 2012, 'description' => '“Filólogos naturalistas en la Banda Oriental en los siglos XVIII y XIX: estudio lingüístico comparativo entre el legado de un naturalista demarcador y el de un demarcador naturalista”.'];
@@ -41,20 +42,20 @@ class LoadGradoFixture extends AbstractFixture implements OrderedFixtureInterfac
         $data[] = ['author' => 'MÉNDEZ, MÓNICA', 'year' => 2012, 'description' => '“Estudio de formas verbales prospectivas del modo indicativo en el español del Uruguay en los siglos XVIII y XIX”.'];
         $data[] = ['author' => 'ORONOZ, LUJÁN', 'year' => 2012, 'description' => '“Presencia histórica de la lengua portuguesa en documentos del siglo XIX en la frontera Artigas-Quaraí”.'];
         $data[] = ['author' => 'SANTI, DIEGO', 'year' => 2012, 'description' => '“La presencia del portugués en la prensa escrita en la frontera uruguayo-brasileña (1895-1961). Análisis del periódico BRAZIL-URUGUAY, 1901″.'];
-    	$data[] = ['author' => 'SOCA, RICARDO', 'year' => 2012, 'description' => '“Elementos compartidos con el portugués de Brasil en los cuentos de José Monegal”.'];
-        
+        $data[] = ['author' => 'SOCA, RICARDO', 'year' => 2012, 'description' => '“Elementos compartidos con el portugués de Brasil en los cuentos de José Monegal”.'];
 
-    	return $data;
+        return $data;
     }
+
     public function load(ObjectManager $manager)
     {
-    	foreach($this->allData() as $data){
-    		$trabajo = new Trabajo();
-    		$trabajo->setAuthors($data['author']);
-    		$trabajo->setDescription($data['description']);
+        foreach ($this->allData() as $data) {
+            $trabajo = new Trabajo();
+            $trabajo->setAuthors($data['author']);
+            $trabajo->setDescription($data['description']);
             $trabajo->setCategory($this->getReference('category-trabajos-grado'));
-    		$manager->persist($trabajo);
-    	}
+            $manager->persist($trabajo);
+        }
         $manager->flush();
     }
 

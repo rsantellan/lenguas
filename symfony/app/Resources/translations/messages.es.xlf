@@ -112,6 +112,35 @@
         <source>documento_ver_norma</source>
         <target><![CDATA[Ver Normas de transcripci&oacute;n]]></target>
       </trans-unit>
+      <trans-unit id="f7f1f3222ecef759dc815a11286cd08c" resname="otros_materiales_titulo">
+        <source>otros_materiales_titulo</source>
+        <target>Otros materiales</target>
+      </trans-unit>
+      <trans-unit id="03cc6774ee6dd921cb3259996f14c638" resname="otros_materiales_texto">
+        <source>otros_materiales_texto</source>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Otros Materiales</h2>
+          <p class="section-sub">Se divulgan aquí una serie de materiales de interés para el estudio de los componentes lingüísticos indígenas y africanos en la conformación del español del Uruguay.</p>]]></target>
+      </trans-unit>
+      <trans-unit id="178643d961999cb2d9040b5da5ea8ce9" resname="sitios_interes_titulo">
+        <source>sitios_interes_titulo</source>
+        <target><![CDATA[Sitios de inter&eacute;s]]></target>
+      </trans-unit>
+      <trans-unit id="147305dbcd412d1a78b90e8b129cc493" resname="sitios_interes_texto">
+        <source>sitios_interes_texto</source>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Sitios de Interés</h2>
+          <p class="section-sub"><a href="http://www.mundoalfal.org/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>ALFAL</a></br></br>
+          <a href="https://proyecto18alfal.wordpress.com/author/proyecto18alfal/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Proyecto Historia del español de América (ALFAL) </a></br></br>
+          <a href="http://www.tycho.iel.unicamp.br/corpus/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Corpus Tycho Brae (portugués) </a></br></br>
+          <a href="http://www.academiadeletras.gub.uy/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Academia Nacional de Letras</a></p>]]></target>
+      </trans-unit>
+      <trans-unit id="d2496f75690108aec2c6b7eea1190fe3" resname="busquedas_titulo">
+        <source>busquedas_titulo</source>
+        <target>__busquedas_titulo</target>
+      </trans-unit>
+      <trans-unit id="8eb96a68cdac808c65df4a101b4d2651" resname="menu_fuentes">
+        <source>menu_fuentes</source>
+        <target><![CDATA[Fuentes lexicogr&aacute;ficas]]></target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

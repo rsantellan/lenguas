@@ -15,14 +15,14 @@ class DocumentoType extends AbstractType
     {
         $builder->add('title')->add('body')->add('orden');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Documento'
+            'data_class' => 'AppBundle\Entity\Documento',
         ));
     }
 
@@ -33,6 +33,4 @@ class DocumentoType extends AbstractType
     {
         return 'appbundle_documento';
     }
-
-
 }

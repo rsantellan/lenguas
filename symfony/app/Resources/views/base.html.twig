@@ -80,6 +80,9 @@
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
                             <li><a href="{{ path('homepage') }}" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">{% trans %}menu_inicio{% endtrans %}</a></li>
+                            {% if not activemenu is defined %}
+                                {% set activemenu = '' %}
+                            {% endif %}
                             {% if not activesubmenu is defined %}
                                 {% set activesubmenu = '' %}
                             {% endif %}

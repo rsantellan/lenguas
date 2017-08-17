@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="4ea38d0c389d4be92680048de838084b" resname="errores_titulo_not_found">
+        <source>errores_titulo_not_found</source>
+        <target>Pagina no encontrada</target>
+      </trans-unit>
+      <trans-unit id="c1e47d77b368714cdd2f76f6e1f4b05c" resname="errores_texto_not_found">
+        <source>errores_texto_not_found</source>
+        <target>Ups... la pagina que estabas buscando no existe...</target>
+      </trans-unit>
+      <trans-unit id="f6d80f7fd0d2a3b45ce7627ff027f196" resname="errores_titulo">
+        <source>errores_titulo</source>
+        <target>Ups a ocurrido un error...</target>
+      </trans-unit>
+      <trans-unit id="cc49e5d77c58b2fc29de7c56d08bc407" resname="errores_texto">
+        <source>errores_texto</source>
+        <target>Ups ocurrio algo malo..</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

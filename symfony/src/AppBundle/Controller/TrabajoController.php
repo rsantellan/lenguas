@@ -4,19 +4,16 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
 use AppBundle\Entity\Trabajo;
 use AppBundle\Entity\Category;
 
 /**
  * Trabajo controller.
- *
  */
 class TrabajoController extends Controller
 {
     /**
      * Lists all trabajo entities.
-     *
      */
     public function indexAction(Request $request, $slug)
     {
@@ -27,12 +24,12 @@ class TrabajoController extends Controller
         $data = $category->getMenuData();
         $data['trabajos'] = $this->get('lenguas.trabajos')->retrieveAllOfCategory($category);
         $data['category'] = $category;
+
         return $this->render('trabajo/index.html.twig', $data);
     }
 
     /**
      * Creates a new trabajo entity.
-     *
      */
     public function newAction(Request $request, $slug)
     {
@@ -56,25 +53,26 @@ class TrabajoController extends Controller
         $data['trabajo'] = $trabajo;
         $data['category'] = $category;
         $data['form'] = $form->createView();
+
         return $this->render('trabajo/new.html.twig', $data);
     }
 
     private function retrieveForm(Category $category, Trabajo $trabajo)
     {
-        if($category->getType() == Category::PUBLICACION){
+        if ($category->getType() == Category::PUBLICACION) {
             return $this->createForm('AppBundle\Form\PublicacionType', $trabajo);
         }
+
         return $this->createForm('AppBundle\Form\MonografiaType', $trabajo);
     }
 
     /**
      * Displays a form to edit an existing trabajo entity.
-     *
      */
     public function editAction(Request $request, Trabajo $trabajo)
     {
         $deleteForm = $this->createDeleteForm($trabajo);
-        $editForm = $this->retrieveForm($trabajo->getCategory(), $trabajo);//$this->createForm('AppBundle\Form\TrabajoType', $trabajo);
+        $editForm = $this->retrieveForm($trabajo->getCategory(), $trabajo); //$this->createForm('AppBundle\Form\TrabajoType', $trabajo);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -86,12 +84,12 @@ class TrabajoController extends Controller
         $data['trabajo'] = $trabajo;
         $data['edit_form'] = $editForm->createView();
         $data['delete_form'] = $deleteForm->createView();
+
         return $this->render('trabajo/edit.html.twig', $data);
     }
 
     /**
      * Deletes a trabajo entity.
-     *
      */
     public function deleteAction(Request $request, Trabajo $trabajo)
     {

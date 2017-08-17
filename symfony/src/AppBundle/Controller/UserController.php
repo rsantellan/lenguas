@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
-use AppBundle\Entity\UserLog;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -44,6 +43,7 @@ class UserController extends Controller
             $newUser->setRoles($user->getRoles());
             $this->get('fos_user.user_manager')->updateUser($newUser, false);
             $this->getDoctrine()->getManager()->flush();
+
             return $this->redirectToRoute('admin_users_edit', array('id' => $newUser->getId()));
         }
 
@@ -127,6 +127,7 @@ class UserController extends Controller
         $user->setEnabled(false);
         $this->get('fos_user.user_manager')->updateUser($user);
         $this->getDoctrine()->getManager()->flush();
+
         return $this->redirectToRoute('admin_users_index');
     }
 
@@ -135,6 +136,7 @@ class UserController extends Controller
         $user->setEnabled(true);
         $this->get('fos_user.user_manager')->updateUser($user);
         $this->getDoctrine()->getManager()->flush();
+
         return $this->redirectToRoute('admin_users_index');
     }
 }
