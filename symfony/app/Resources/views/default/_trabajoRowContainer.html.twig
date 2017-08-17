@@ -1,6 +1,9 @@
 <div class="panel-body">
     <div><strong>{{ trabajo['trabajo'].authors }}{% if trabajo['trabajo'].showYear %} ({{ trabajo['trabajo'].year }}){% endif %}</strong>. {{ trabajo['trabajo'].description | raw }}</div>
     {% for file in trabajo['files'] %}
-      <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red">{% trans %}publicaciones_descargar_archivo{% endtrans %}{% if trabajo['files'] | length > 0 %} {{ loop.index }}{% endif %}</a> {% if trabajo['files'] | length > 0 %} </br></br>{% endif %}
+    <a href="{{ path('descargar_archivo', {'id': file.id}) }}" target="blank" class="waves-effect waves-light btn red">
+      	{% if file.showName == '' %}{% trans %}publicaciones_descargar_archivo{% endtrans %} {% if trabajo['files'] | length > 1 %} {{ loop.index }}{% endif %}{% else %}{{ file.showName}}{% endif %}
+  	</a> 
+  	{% if trabajo['files'] | length > 1 %} </br></br>{% endif %}
     {% endfor %}
 </div>
