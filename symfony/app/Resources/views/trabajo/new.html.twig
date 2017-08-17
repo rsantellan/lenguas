@@ -1,0 +1,22 @@
+{% extends 'MaithCommonAdminBundle::adminlayout.html.twig' %}
+
+{% block title %}Crear nuevo elemento en {{category.name}}{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+        <section class="panel panel-color">
+        <header class="panel-heading text-uppercase"><i class="fa fa-pencil-square-o"></i>Crear nuevo elemento en {{category.name}}</header>
+        {% if category.type == constant('PUBLICACION', category) %}
+            {% include 'trabajo/_completeForm.html.twig' with { 'form' : form } %}
+        {% else %}
+            {% include 'trabajo/_basicForm.html.twig' with { 'form' : form } %}
+        {% endif %}
+        </section>
+    </div>
+    <div class="col-lg-8">
+        <a href="{{ path('admin_trabajos_index', {'slug' : category.slug }) }}" class="btn btn-success" style="float: left; margin: 0!important;">
+            <i class="fa fa-arrow-left"></i>Volver al listado
+        </a>
+    </div>
+</div>
+{% endblock %}

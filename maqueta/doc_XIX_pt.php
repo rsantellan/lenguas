@@ -31,7 +31,7 @@
             <div class="container">
 
               <div class="mb-80">
-                  <img src="assets/img/Tapa-Documentos-siglo-XIX.jpg" class="doc-libros">
+                  <img src="assets/img/Tapa-Documentos-siglo-XIX-pt.jpg" class="doc-libros">
               </div>
 
               <div class="mb-80">

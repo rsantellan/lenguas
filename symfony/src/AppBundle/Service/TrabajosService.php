@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Logger;
 
 use AppBundle\Entity\Trabajo;
+use AppBundle\Entity\Category;
 
 class TrabajosService
 {
@@ -19,6 +20,17 @@ class TrabajosService
         $this->em = $em;
         $this->logger = $logger;
         $this->logger->addDebug('Starting Trabajos Service');
+    }
+
+    public function retrieveAllOfCategory(Category $category)
+    {
+        $dql = 'select t from AppBundle:Trabajo t where t.category = :category order by t.authors asc, t.year asc';
+        return $this->em->createQuery($dql)->setParameters(['category' => $category])->getResult();
+    }
+
+    public function retrieveAllOfCategoryPerLetter(Category $category, $mediaAlbumService = null)
+    {
+        return $this->sortTrabajosPerLetter($this->retrieveAllOfCategory($category), $mediaAlbumService);
     }
 
     public function retrieveAllPublicaciones()

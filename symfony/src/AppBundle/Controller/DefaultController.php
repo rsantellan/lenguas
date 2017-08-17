@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use AppBundle\Entity\Category;
+
 class DefaultController extends Controller
 {
 
@@ -17,40 +19,20 @@ class DefaultController extends Controller
             'activemenu' => 'inicio'
         ]);
     }
-
-    public function publicacionesAction(Request $request)
-    {
-        $trabajos = $this->get('lenguas.trabajos')->retrieveAllPublicacionesPerLetter($this->get('media_album_service'));
-        return $this->render('default/publicaciones.html.twig', [
-            'activemenu' => 'publicaciones',
-            'trabajos' => $trabajos
-        ]);
-    }
-
-    public function monografiagradoAction(Request $request)
-    {
-        $trabajos = $this->get('lenguas.trabajos')->retrieveAllMonografiasGradoPerLetter($this->get('media_album_service'));
-        return $this->render('default/monografiagrado.html.twig', [
-            'activemenu' => 'monografias',
-            'activesubmenu' => 'grado',
-            'trabajos' => $trabajos
-        ]);
-    }
-
-    public function monografiaposgradoAction(Request $request)
-    {
-        $trabajos = $this->get('lenguas.trabajos')->retrieveAllMonografiasPosgradoPerLetter($this->get('media_album_service'));
-        return $this->render('default/monografiaposgrado.html.twig', [
-            'activemenu' => 'monografias',
-            'activesubmenu' => 'posgrado',
-            'trabajos' => $trabajos
-        ]);
-    }
-    
+   
     public function sitiosinteresAction(Request $request)
     {
         return $this->render('default/sitiosinteres.html.twig', [
             'activemenu' => 'sitiosinteres',
+        ]);
+    }
+
+    public function otrosmaterialesAction(Request $request)
+    {
+        $categories = $this->get('lenguas.categories')->retrieveForMenuByType(Category::OTROS);
+        return $this->render('default/otrosmateriales.html.twig', [
+            'activemenu' => 'otrosmateriales',
+            'categories' => $categories,
         ]);
     }
 
@@ -61,12 +43,74 @@ class DefaultController extends Controller
         ]);
     }
 
-    public function menuDocumentosAction(Request $request)
+    public function menuCategoriasAction(Request $request, $activemenu = '', $activesubmenu = '')
     {
+        $this->get('logger')->error($activemenu);
+        $this->get('logger')->error($activesubmenu);
         $documents = $this->get('lenguas.documentos')->retrieveAllDocumentsForMenu();
-        return $this->render('default/_menuDocumentos.html.twig', [
+        $categories = $this->get('lenguas.categories')->retrieveForMenu(false);
+        $monografias = [];
+        $publicaciones = [];
+        $fuentes = [];
+        if(isset($categories[Category::PUBLICACION])){
+          $publicaciones = $categories[Category::PUBLICACION];
+        }
+        if(isset($categories[Category::MONOGRAFIA])){
+          $monografias = $categories[Category::MONOGRAFIA];
+        }
+        if(isset($categories[Category::FUENTES])){
+          $fuentes = $categories[Category::FUENTES];
+        }
+        return $this->render('default/_menuGeneral.html.twig', [
             'documents' => $documents,
+            'monografias' => $monografias,
+            'publicaciones' => $publicaciones,
+            'fuentes' => $fuentes,
+            'activemenu' => $activemenu,
+            'activesubmenu' => $activesubmenu,
         ]);
+    }
+
+    private function getActiveMenuFromCategory(Category $category)
+    {
+      if($category->getType() == Category::PUBLICACION){
+        return [
+            'activemenu' => 'publicaciones',
+            'activesubmenu' => $category->getName(),
+            'header' => 'publicaciones',
+            'showYear' => true,
+        ];
+      }
+      if($category->getType() == Category::MONOGRAFIA){
+        return [
+            'activemenu' => 'monografias',
+            'activesubmenu' => $category->getName(),
+            'header' => 'monografias',
+            'showYear' => false,
+        ];
+      }
+      if($category->getType() == Category::FUENTES){
+        return [
+            'activemenu' => 'fuentes',
+            'activesubmenu' => $category->getName(),
+            'header' => 'fuentes',
+            'showYear' => false,
+        ];
+      }
+      return [];
+    }
+
+    public function genericosAction(Request $request, $slug)
+    {
+      $category = $this->get('lenguas.categories')->retrieveBySlug($slug);
+      if (!$category) {
+            throw $this->createNotFoundException('La categoria no existe');
+      }
+      $trabajos = $this->get('lenguas.trabajos')->retrieveAllOfCategoryPerLetter($category, $this->get('media_album_service'));
+      $returnData = $this->getActiveMenuFromCategory($category);
+      $returnData['trabajos'] = $trabajos;
+      $returnData['category'] = $category;
+      return $this->render('default/trabajosGenerico.html.twig', $returnData);
     }
 
     public function documentoAction(Request $request, $slug)

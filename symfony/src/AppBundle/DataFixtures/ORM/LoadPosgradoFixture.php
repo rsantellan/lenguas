@@ -35,9 +35,9 @@ class LoadPosgradoFixture extends AbstractFixture implements OrderedFixtureInter
     {
     	foreach($this->allData() as $data){
     		$trabajo = new Trabajo();
-    		$trabajo->setType(Trabajo::MONOGRAFIAPOSGRADO);
     		$trabajo->setAuthors($data['author']);
     		$trabajo->setDescription($data['description']);
+            $trabajo->setCategory($this->getReference('category-trabajos-posgrado'));
     		$manager->persist($trabajo);
     	}
         $manager->flush();

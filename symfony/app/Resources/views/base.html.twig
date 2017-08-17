@@ -80,35 +80,15 @@
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
                             <li><a href="{{ path('homepage') }}" class="{% if (activemenu is defined) and activemenu == 'inicio' %}current{% endif %}">{% trans %}menu_inicio{% endtrans %}</a></li>
-
-                            <li>
-                                <a href="{{ path('publicaciones') }}" class="{% if (activemenu is defined) and activemenu == 'publicaciones' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_publicaciones{% endtrans %}</a></li>
-
-                            <li>
-                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'monografias' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true" ></i>{% trans %}menu_monografias{% endtrans %}</a>
-                                <ul class="dropdown">
-                                    <li><a href="{{ path('monografiagrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'grado' %}current{% endif %}">{% trans %}menu_monografias_grado{% endtrans %}</a></li>
-                                    <li><a href="{{ path('monografiaposgrado') }}" class="{% if (activesubmenu is defined) and activesubmenu == 'posgrado' %}current{% endif %}">{% trans %}menu_monografias_posgrado{% endtrans %}</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
-                                <ul class="dropdown">
-                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'indigenas' %}current{% endif %}">Repositorios lexicográficos</a></li>
-                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios independientes</a></li>
-                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios de voces de origen africano</a></li>
-                                    <li><a href="#" class="{% if (activesubmenu is defined) and activesubmenu == 'africanas' %}current{% endif %}">Vocabularios riograndenses</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
-                                {{ render(controller('AppBundle:Default:menuDocumentos')) }}
-                            </li>
+                            {% if not activesubmenu is defined %}
+                                {% set activesubmenu = '' %}
+                            {% endif %}
+                            {{ render(controller('AppBundle:Default:menuCategorias', {'activemenu' : activemenu, 'activesubmenu' : activesubmenu})) }}
+                            
 
                             <li><a href="{{ path('sitiosinteres') }}" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_sitios_interes{% endtrans %}</a></li>
 
-                            <li><a href="#" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
+                            <li><a href="{{ path('otrosmateriales') }}" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
                         </ul>
                         <!--mega menu end-->
                     </div>

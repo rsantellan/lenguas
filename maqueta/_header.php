@@ -48,10 +48,10 @@
 
                             <li><a href="javascript:void(0)" <?php if($pagina == 'fuentes'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
                                 <ul class="dropdown">
-                                    <li><a href="#" <?php if($item == 'indigenas'):?> class="current"<?php endif;?>>Repositorios lexicográficos</a></li>
-                                    <li><a href="#" <?php if($item == 'africanas'):?> class="current"<?php endif;?>>Vocabularios independientes</a></li>
-                                    <li><a href="#" <?php if($item == 'africanas'):?> class="current"<?php endif;?>>Vocabularios de voces de origen africano</a></li>
-                                    <li><a href="#" <?php if($item == 'africanas'):?> class="current"<?php endif;?>>Vocabularios riograndenses</a></li>
+                                    <li><a href="glosario-obras-literarias.php" <?php if($item == 'glosario-obras-literarias'):?> class="current"<?php endif;?>>Glosario de obras literarias</a></li>
+                                    <li><a href="vocabularios-independientes.php" <?php if($item == 'vocabularios-independientes'):?> class="current"<?php endif;?>>Vocabularios independientes</a></li>
+                                    <li><a href="vocabularios-riograndenses.php" <?php if($item == 'vocabularios-riograndenses'):?> class="current"<?php endif;?>>Vocabularios riograndenses</a></li>
+                                    <li><a href="vocabularios-africanos.php" <?php if($item == 'vocabularios-africanos'):?> class="current"<?php endif;?>>Vocabularios de voces de origen africano</a></li>
                                 </ul>
                             </li>
 
@@ -65,7 +65,7 @@
 
                             <li><a href="sitios-interes.php" <?php if($pagina == 'sitios-interes'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>
 
-                            <li><a href="#" <?php if($pagina == 'otros-materiales'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
+                            <li><a href="otros-materiales.php" <?php if($pagina == 'otros-materiales'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
                         </ul>
                         <!--mega menu end-->
 

@@ -1,0 +1,19 @@
+admin_trabajos_index:
+    path:     /{slug}
+    defaults: { _controller: "AppBundle:Trabajo:index" }
+    methods:  GET
+
+admin_trabajos_new:
+    path:     /{slug}/new
+    defaults: { _controller: "AppBundle:Trabajo:new" }
+    methods:  [GET, POST]
+
+admin_trabajos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Trabajo:edit" }
+    methods:  [GET, POST]
+
+admin_trabajos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Trabajo:delete" }
+    methods:  DELETE

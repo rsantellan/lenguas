@@ -1,0 +1,18 @@
+{% for key, list in categories %}
+<li class="dropdown">
+	<a href="javascript:;" data-toggle="dropdown">
+		<i class="fa fa-file-text-o"></i>
+		<span>{{ key }}</span>
+		<i class="toggle-accordion"></i>
+	</a>
+	<ul class="dropdown-menu">
+		{% for category in list %}
+		<li class="">
+			<a href="{{ path('admin_trabajos_index', {'slug' : category.slug })}}">
+				<span>{{ category.name }}</span>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+</li>	
+{% endfor %}	

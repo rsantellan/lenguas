@@ -32,7 +32,7 @@
               <div class="mb-80">
                   <h2 class="section-title text-capitalize section-sub">Publicaciones</h2>
                   <p class="section-sub">Se incluyen aquí publicaciones académicas sobre temas relacionados con la historia de las lenguas en Uruguay, surgidas a partir de los años 90.</p>
-                  <p class="section-sub">Agradecemos a los autores, editores y compiladores de estos trabajos que gentil-mente nos permitieron su difusión a través de esta página.</p>                    
+                  <p class="section-sub">Agradecemos a los autores, editores y compiladores de estos trabajos que gentilmente nos permitieron su difusión a través de esta página.</p>                    
               </div>
 
               <div class="row mb-80">

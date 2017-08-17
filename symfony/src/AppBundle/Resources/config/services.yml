@@ -1,6 +1,7 @@
 parameters:
   lenguas.trabajos.class: AppBundle\Service\TrabajosService
   lenguas.documentos.class: AppBundle\Service\DocumentoService
+  lenguas.categories.class: AppBundle\Service\CategoriesService
 
 
 services:
@@ -12,4 +13,8 @@ services:
     lenguas.documentos:
         class: "%lenguas.documentos.class%"
         arguments: ["@doctrine.orm.entity_manager", "@logger"]
-        public: true        
+        public: true
+    lenguas.categories:
+        class: "%lenguas.categories.class%"
+        arguments: ["@doctrine.orm.entity_manager", "@logger"]
+        public: true                   

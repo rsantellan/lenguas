@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<title>Historia lingüística del Uruguay</title>
+<title>Historia lingüística del Uruguay | Otros materiales</title>
+<?php $pagina = 'sitios-materiales';?>
 <?php include('_head.php');?>
 
 
@@ -15,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ol class="breadcrumb">
-                            <li class="active">Colaboradores</li>
+                            <li class="active">Otros Materiales</li>
                         </ol>
                     </div>
                 </div>
@@ -28,8 +29,13 @@
             <div class="container">
 
               <div class="mb-80">
-                  <h2 class="section-title text-capitalize section-sub">Colaboradores</h2>
+                  <h2 class="section-title text-capitalize section-sub">Otros Materiales</h2>
+                  <p class="section-sub">Se divulgan aquí una serie de materiales de interés para el estudio de los componentes lingüísticos indígenas y africanos en la conformación del español del Uruguay.</p>
+                  <p class="section-sub"><a href="lenguas-indigenas.php"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Materiales vinculados a las lenguas indígenas en el Uruguay</a></br></br>
+                  <a href="lenguas-africanas.php"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Materiales vinculados a las lenguas africanas en el Uruguay</a>
+            
               </div>
+
 
             </div><!-- /.container -->
         </section>
