@@ -163,7 +163,10 @@ class DefaultController extends Controller
             $name = $file->getShowName().'.'.$file_extension;
         }
         $response->headers->set('Content-Type', $mime_type);
-        $response->headers->set('Content-Disposition', 'attachment;filename="'.$name);
+        
+        $response->headers->set('Content-Disposition', 'inline;filename="'.$name);
+        
+        
 
         $response->setContent($content);
 
