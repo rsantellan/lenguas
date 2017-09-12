@@ -135,11 +135,15 @@
       </trans-unit>
       <trans-unit id="d2496f75690108aec2c6b7eea1190fe3" resname="busquedas_titulo">
         <source>busquedas_titulo</source>
-        <target>__busquedas_titulo</target>
+        <target>Busquedas</target>
       </trans-unit>
       <trans-unit id="8eb96a68cdac808c65df4a101b4d2651" resname="menu_fuentes">
         <source>menu_fuentes</source>
         <target><![CDATA[Fuentes lexicogr&aacute;ficas]]></target>
+      </trans-unit>
+      <trans-unit id="1c3b38fd41ec7569b48964a9290d00e6" resname="busquedas_titulo_sin_resultado">
+        <source>busquedas_titulo_sin_resultado</source>
+        <target><![CDATA[No se encontro ning&uacute;n resultado para la busqueda.]]></target>
       </trans-unit>
     </body>
   </file>
