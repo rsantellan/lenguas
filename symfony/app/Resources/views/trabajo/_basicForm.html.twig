@@ -10,6 +10,12 @@
         <label for="{{ form.description.vars.id }}">Descripción</label>
         {{ form_widget(form.description, {'attr' : {'class' : 'form-control'}}) }}
     </div>
+    <div class="form-group">
+        {{ form_errors(form.url) }}
+        <label for="{{ form.url.vars.id }}">Enlace</label>
+        {{ form_widget(form.url, {'attr' : {'class' : 'form-control'}}) }}
+        <p class="help-block">Este campo solo sera visible al ponerle un enlace web.</p>
+    </div>
     {{ form_rest(form) }}
     <div class="form-group">
         <button type="submit" class="btn btn-default"><i class="fa fa-save"></i>Guardar</button>

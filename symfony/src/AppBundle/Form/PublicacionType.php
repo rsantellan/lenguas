@@ -11,6 +11,6 @@ class PublicacionType extends TrabajoType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('authors')->add('description')->add('year');
+        $builder->add('authors')->add('description')->add('year')->add('url');
     }
 }

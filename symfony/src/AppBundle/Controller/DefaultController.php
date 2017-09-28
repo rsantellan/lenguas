@@ -42,6 +42,13 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function agradecimientosAction(Request $request)
+    {
+        return $this->render('default/agradecimientos.html.twig', [
+            'activemenu' => 'agradecimientos',
+        ]);
+    }
+
     public function menuCategoriasAction(Request $request, $activemenu = '', $activesubmenu = '')
     {
         $documents = $this->get('lenguas.documentos')->retrieveAllDocumentsForMenu();

@@ -30,10 +30,14 @@
 
               <div class="mb-80">
                   <h2 class="section-title text-capitalize section-sub">Sitios de Interés</h2>
-                  <p class="section-sub"><a href="http://www.mundoalfal.org/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>ALFAL</a></br></br>
+                  <p class="section-sub">
+                  <a href="http://www.cordiam.org" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Corpus Diacrónico y Diatópico del Español de América (Cordiam)</a></br></br>
+                  <a href="http://redea.cordiam.org/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Red Temática de Filología, Informática y Español de América (REDEA)</a></br></br>                  
+                  <a href="http://www.mundoalfal.org/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>ALFAL</a></br></br>
                   <a href="https://proyecto18alfal.wordpress.com/author/proyecto18alfal/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Proyecto Historia del español de América (ALFAL) </a></br></br>
-                  <a href="http://www.tycho.iel.unicamp.br/corpus/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Corpus Tycho Brae (portugués) </a></br></br>
-                  <a href="http://www.academiadeletras.gub.uy/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Academia Nacional de Letras</a></p>
+                  <a href="http://www.tycho.iel.unicamp.br/corpus/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Corpus Tycho Brahe (portugués) </a></br></br>
+                  <a href="http://www.academiadeletras.gub.uy/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Academia Nacional de Letras</a>
+                </p>
             
               </div>
 

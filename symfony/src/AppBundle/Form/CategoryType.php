@@ -19,9 +19,11 @@ class CategoryType extends AbstractType
             'Publicación' => Category::PUBLICACION,
             'Monografía' => Category::MONOGRAFIA,
             'Fuentes' => Category::FUENTES,
+            'Otros Materiales' => Category::OTROS,
         ];
         $builder
             ->add('name')
+            ->add('longname')
             ->add('description')
             ->add('orden')
             ->add('type', ChoiceType::class, array(

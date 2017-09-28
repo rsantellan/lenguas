@@ -22,7 +22,7 @@
     <div class="container">
 
       <div class="mb-80">
-      	<h2 class="section-title text-capitalize section-sub">{{ category.name }}</h2>
+      	<h2 class="section-title section-sub">{{ category.name }}</h2>
       	{{ category.description | raw }}                  
       </div>
 
@@ -34,12 +34,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h3 class="panel-title">
-                      <a class="{% if not loop.first %}collapsed{% endif %}" data-toggle="collapse" data-parent="#basic" href="#basic-{{ key }}">
+                      <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-{{ key }}">
                         {{ key }}
                       </a>
                     </h3>
                   </div>
-                  <div id="basic-{{ key }}" class="panel-collapse collapse {% if loop.first %}in{% endif %}">
+                  <div id="basic-{{ key }}" class="panel-collapse collapse">
                     {% for trabajo in data %}
                       {% include 'default/_trabajoRowContainer.html.twig' with {'trabajo': trabajo} %}
                     {% if data | length > 1 and not loop.last %}<hr/>{% endif %}

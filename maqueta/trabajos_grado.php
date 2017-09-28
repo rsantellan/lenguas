@@ -43,12 +43,12 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-a">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-a">
                             A
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-a" class="panel-collapse collapse in">
+                      <div id="basic-a" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>AMODIO, MARIANA:</strong> “La literatura como fuente para la Lingüística Histórica. Estudio del contacto histórico entre el español y el portugués. El caso de Pedro Leandro Ipuche, Serafín J. García y Julio C. da Rosa”.</div>
                             <a href="monografias/Amodio-2012.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>

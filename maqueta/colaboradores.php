@@ -29,6 +29,7 @@
 
               <div class="mb-80">
                   <h2 class="section-title text-capitalize section-sub">Colaboradores</h2>
+                  <p class="section-sub">Han colaborado con esta web Cecilia Bértola, Amparo Fernández Guerra, Juan Manuel Fustes, Joaquín Ginés y Yamila Montenegro.</p>              
               </div>
 
             </div><!-- /.container -->

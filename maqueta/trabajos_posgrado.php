@@ -43,12 +43,12 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-d">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-d">
                             D
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-d" class="panel-collapse collapse in">
+                      <div id="basic-d" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>DA SILVA, ALINEA S.:</strong> “Entre correspondências e interferências: o tratamento na região fronteiriça Uruguai-Brasil no século XIX.</div>
                             <a href="monografias/Santos-da-Silva-2009.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>

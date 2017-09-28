@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<title>Historia lingüística del Uruguay | Lenguas Africanas</title>
+<title>Historia lingüística del Uruguay | Lenguas africanas</title>
 <?php $pagina = 'sitios-materiales';?>
 <?php include('_head.php');?>
 
@@ -17,7 +17,7 @@
                     <div class="col-md-12">
                         <ol class="breadcrumb">
                             <li><a href="index.php">Otros materiales</a></li>
-                            <li class="active">Lenguas Africanas</li>
+                            <li class="active">Lenguas africanas</li>
                         </ol>
                     </div>
                 </div>
@@ -30,8 +30,9 @@
             <div class="container">
 
               <div class="mb-80">
-                  <h2 class="section-title section-sub">Lenguas Africanas</h2>
-                  <p class="section-sub">Para estudiar la presencia y el contacto de lenguas africanas así como la representación del habla de los africanos y sus descendientes en Montevideo en el siglo XIX, nos han sido de gran interés materiales y textos a los que accedimos a través de Ayestarán (1953), Goldman (1997, 2008a, 2008b y 2008c), Montaño (1997, 2008), etc. Divulgamos aquí fotografías o escaneos de los originales de estos textos, que se conservan en la Biblioteca Nacional[1], ya que el acceso directo a los originales permite un análisis lingüístico más fiable.</p>
+                  <h2 class="section-title section-sub">Lenguas africanas</h2>
+                  <p class="section-sub">Para estudiar la presencia y el contacto de lenguas africanas así como la representación del habla de los africanos y sus descendientes en Montevideo en el siglo XIX, nos han sido de gran interés materiales y textos a los que accedimos a través de Ayestarán (1953), Goldman (1997, 2008a, 2008b y 2008c), Montaño (1997, 2008), etc. Divulgamos aquí fotografías o escaneos de los originales de estos textos, que se conservan en la Biblioteca Nacional, ya que el acceso directo a los originales permite un análisis lingüístico más fiable.</br></br>
+                    También se reproducen dos semanarios –<i>La Conservación y El Progresista</i>– de la colectividad negra a finales del siglo XIX en Montevideo.</p>
               </div>
 
               <div class="row mb-80">
@@ -42,12 +43,12 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-c">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-c">
                             C
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-c" class="panel-collapse collapse in">
+                      <div id="basic-c" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>Comparsa Pobres Negros Orientales, 1876. Tango. Título: “Mis Caprichos”</strong>. Tomado de El Carnaval. Colección de Canciones de la mayor parte de las comparsas carnavalescas por Figaro o sea Julio Figueroa. Establecimiento tipográfico á vapor La Idea, Montevideo, Año VI, Nº 6, páginas 32-33. Material conservado en la Sala Uruguay en la Biblioteca Nacional (Montevideo, Uruguay).</div>
                             <a href="otros-materiales/fuentes-africanas/Mis-Caprichos.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>

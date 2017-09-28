@@ -43,12 +43,12 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-b">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-b">
                             B
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-b" class="panel-collapse collapse in">
+                      <div id="basic-b" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>BÉRTOLA, CECILIA (2012).</strong> “Notas y definiciones de voces rioplatenses en viajeros y cronistas del Río de la Plata (siglos XVIII y XIX): primeros avances”. Ponencia leída en el VI Seminario sobre lexicología y lexocografía del español y del portugués americanos. Academia Nacional de Letras del Uruguay-Instituto de Lingüística de la Facultad de Humanidades y Ciencias de la Educación. Montevideo, 16 y 17 de octubre de 2012. Publicada en el sitio web de la Academia Nacional de Letras.</div>
                             <a href="publicaciones/Bertola4.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>
@@ -65,7 +65,7 @@
                         </div>
                         <hr>
                         <div class="panel-body">
-                            <div><strong>BERTOLOTTI, VIRGINIA (2007)</strong>. ”De los orígenes de gaucho: un vagabundo en fronteras inciertas”. Revista de la Academia Nacional de Letras del Uruguay. Año 2, No. 2: pp. 167-203.</div>
+                            <div><strong>BERTOLOTTI, VIRGINIA (2007)</strong>. “De los orígenes de gaucho: un vagabundo en fronteras inciertas”. Revista de la Academia Nacional de Letras del Uruguay. Año 2, No. 2: pp. 167-203.</div>
                             <a href="publicaciones/Bertolotti2007.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>
                         </div>
                         <hr>
@@ -137,6 +137,11 @@
                         <div class="panel-body">
                             <div><strong>BERTOLOTTI, VIRGINIA / MAGDALENA COLL (2013)</strong>. Contacto y pérdida: el español y las lenguas indígenas en el Río de la Plata entre los siglos XVI y XIX. Boletín de Filología, 48 (2), Pág. 11 – 30.</div>
                             <a href="publicaciones/30238-100489-1-PB.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>
+                        </div>
+                        <hr>
+                        <div class="panel-body">
+                            <div><strong>BERTOLOTTI, VIRGINIA / MAGDALENA COLL</strong>. "Retrato lingüistico del Uruguay". Un enfoque histórico sobre las lenguas.</div>
+                            <a href="publicaciones/BertolottiColl-retrato.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>
                         </div>
 
                       </div>

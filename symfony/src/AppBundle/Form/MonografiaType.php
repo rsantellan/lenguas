@@ -11,6 +11,6 @@ class MonografiaType extends TrabajoType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('authors')->add('description');
+        $builder->add('authors')->add('description')->add('url');
     }
 }

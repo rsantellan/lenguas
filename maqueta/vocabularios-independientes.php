@@ -43,15 +43,15 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-b">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-b">
                             B
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-b" class="panel-collapse collapse in">
+                      <div id="basic-b" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>BARCIA, PEDRO LUIS:</strong> Un inédito Diccionario de argentinismos del siglo XIX, Academia Argentina de Letras, Buenos Aires, 2006</div>
-                            <a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>                                               
                       </div>
                     </div>

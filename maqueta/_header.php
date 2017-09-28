@@ -46,6 +46,14 @@
                                 </ul>
                             </li>
 
+                            <li><a href="javascript:void(0)" <?php if($pagina == 'documentos'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Documentos</a>
+                                <ul class="dropdown">
+                                    <li><a href="doc_SXVIII.php" <?php if($item == 'doc_SXVIII'):?> class="current"<?php endif;?>>Documentos siglo XVIII</a></li>
+                                    <li><a href="doc_XIX.php" <?php if($item == 'doc_XIX'):?> class="current"<?php endif;?>>Documentos siglo XIX</a></li>
+                                    <li><a href="doc_XIX_pt.php" <?php if($item == 'doc_XIX_pt'):?> class="current"<?php endif;?>>Documentos portugués siglo XIX</a></li>
+                                </ul>
+                            </li>
+
                             <li><a href="javascript:void(0)" <?php if($pagina == 'fuentes'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Fuentes lexicográficas</a>
                                 <ul class="dropdown">
                                     <li><a href="glosario-obras-literarias.php" <?php if($item == 'glosario-obras-literarias'):?> class="current"<?php endif;?>>Glosario de obras literarias</a></li>
@@ -55,17 +63,10 @@
                                 </ul>
                             </li>
 
-                            <li><a href="javascript:void(0)" <?php if($pagina == 'documentos'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Documentos</a>
-                                <ul class="dropdown">
-                                    <li><a href="doc_SXVIII.php" <?php if($item == 'doc_SXVIII'):?> class="current"<?php endif;?>>Documentos siglo XVIII</a></li>
-                                    <li><a href="doc_XIX.php" <?php if($item == 'doc_XIX'):?> class="current"<?php endif;?>>Documentos siglo XIX</a></li>
-                                    <li><a href="doc_XIX_pt.php" <?php if($item == 'doc_XIX_pt'):?> class="current"<?php endif;?>>Documentos portugués siglo XIX</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="sitios-interes.php" <?php if($pagina == 'sitios-interes'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>
-
                             <li><a href="otros-materiales.php" <?php if($pagina == 'otros-materiales'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
+                           
+                            <li><a href="sitios-interes.php" <?php if($pagina == 'sitios-interes'):?> class="current"<?php endif;?>><i class="fa fa-circle" aria-hidden="true"></i>Sitios de interés</a></li>
+                       
                         </ul>
                         <!--mega menu end-->
 

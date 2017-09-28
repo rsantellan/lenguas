@@ -67,6 +67,8 @@ $(document).ready(function () {
                             Monografía
                         {% elseif category.type == constant('FUENTES', category) %}
                             Fuentes
+                        {% elseif category.type == constant('OTROS', category) %}
+                            Otros
                         {% endif %}
                     </td>
                     <td>

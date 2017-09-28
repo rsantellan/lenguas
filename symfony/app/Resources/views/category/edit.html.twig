@@ -20,6 +20,11 @@
                 {{ form_widget(edit_form.name, {'attr' : {'class' : 'form-control'}}) }}
             </div>
             <div class="form-group">
+                {{ form_errors(edit_form.longname) }}
+                <label for="{{ edit_form.longname.vars.id }}">Nombre Largo</label>
+                {{ form_widget(edit_form.longname, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group">
                 {{ form_errors(edit_form.description) }}
                 <label for="{{ edit_form.description.vars.id }}">Descripción</label>
                 {{ form_widget(edit_form.description, {'attr' : {'class' : 'form-control'}}) }}

@@ -43,20 +43,20 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-a">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-a">
                             A
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-a" class="panel-collapse collapse in">
+                      <div id="basic-a" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>ALVARES PEREIRA CORUJA, ANTONIO:</strong> Antonio. 1948. “Coleção de vocábulos e frases usados na Província de São Pedro do Rio Grande do Sul”. Anotado por el Prof. Walter Spalding. Instituto de Estudios Superiores de Montevideo, Boletín de Filología. Tomo V- N.os 37-38-39, marzo-junio-setiembre, de 1948, Montevideo. Páginas 113 a 384.</div>
-                            <!--<a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer artículo</a>-->
+                            <!--<a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer</a>-->
                         </div>     
                         <hr>
                         <div class="panel-body">
                             <div><strong>ALVARES PEREIRA CORUJA, ANTONIO:</strong> 1856. Collecção de vocabulos e frases usados na provincia de S. Pedro do Rio Grande do Sul no Brazil. Londes: Trübner e comp.</div>
-                            <!--<a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer artículo</a>-->
+                            <!--<a href="https://books.google.es/books?id=bFLFAAAAMAAJ&dq=Daniel%20Granada&hl=es&pg=PP4#v=onepage&q=Daniel%20Granada&f=false" target="blank" class="waves-effect waves-light btn red">leer</a>-->
                         </div>                                                                    
                       </div>
                     </div>

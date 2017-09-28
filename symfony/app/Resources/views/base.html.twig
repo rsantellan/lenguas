@@ -88,10 +88,9 @@
                             {% endif %}
                             {{ render(controller('AppBundle:Default:menuCategorias', {'activemenu' : activemenu, 'activesubmenu' : activesubmenu})) }}
                             
+                            <li><a href="{{ path('otrosmateriales') }}" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
 
                             <li><a href="{{ path('sitiosinteres') }}" class="{% if (activemenu is defined) and activemenu == 'sitiosinteres' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_sitios_interes{% endtrans %}</a></li>
-
-                            <li><a href="{{ path('otrosmateriales') }}" class="{% if (activemenu is defined) and activemenu == 'otrosmateriales' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>Otros materiales</a></li>
                         </ul>
                         <!--mega menu end-->
                     </div>
@@ -123,7 +122,7 @@
 
             <div class="secondary-footer brand-bg darken-2">
                 <div class="container">
-                    <span class="copy-text">{% trans %}footer_responsables{% endtrans %}<a href="{{ path('colaboradores')}}">{% trans %}footer_colaboradores{% endtrans %}</a></span>
+                    <span class="copy-text">{% trans %}footer_responsables{% endtrans %}<a href="{{ path('colaboradores')}}">{% trans %}footer_colaboradores{% endtrans %}</a> | <strong><a href="{{ path('agradecimientos')}}">{% trans %}footer_agradecimientos{% endtrans %}</a> </span>
 
                 </div><!-- /.container -->
             </div><!-- /.secondary-footer -->

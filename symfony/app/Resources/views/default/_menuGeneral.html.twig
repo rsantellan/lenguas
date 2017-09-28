@@ -26,6 +26,15 @@
 	{% endif %}
 </li>
 {% endif %}
+{% if documents | length > 0 %}
+<li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
+    <ul class="dropdown">
+		{% for document in documents %}
+			<li><a href="{{ path('documento', {'slug': document.slug})}}" class="{% if (activesubmenu is defined) and activesubmenu == '{{ document.slug }}' %}current{% endif %}">{{ document.title }}</a></li>
+		{% endfor %}
+	</ul>
+</li>
+{% endif %}
 {% if fuentes | length > 0 %}
 <li>
 	{% if fuentes | length > 1 %}
@@ -38,14 +47,5 @@
 	{% else %}
 	<a href="{{ path('publicaciones_genericos', {'slug' : publicaciones[0].slug }) }}" class="{% if (activemenu is defined) and activemenu == 'fuentes' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_fuentes{% endtrans %}</a>
 	{% endif %}
-</li>
-{% endif %}
-{% if documents | length > 0 %}
-<li><a href="javascript:void(0)" class="{% if (activemenu is defined) and activemenu == 'documentos' %}current{% endif %}"><i class="fa fa-circle" aria-hidden="true"></i>{% trans %}menu_documentos{% endtrans %}</a>
-    <ul class="dropdown">
-		{% for document in documents %}
-			<li><a href="{{ path('documento', {'slug': document.slug})}}" class="{% if (activesubmenu is defined) and activesubmenu == '{{ document.slug }}' %}current{% endif %}">{{ document.title }}</a></li>
-		{% endfor %}
-	</ul>
 </li>
 {% endif %}

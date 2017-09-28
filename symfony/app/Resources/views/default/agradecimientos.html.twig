@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!--page title start-->
+<section class="page-title ptb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li class="active">{% trans %}agradecimientos_titulo{% endtrans %}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!--page title end-->
+<section class="section-padding">
+    <div class="container">
+
+      <div class="mb-80">
+            {% trans %}agradecimientos_texto{% endtrans %}
+      </div>
+    </div><!-- /.container -->
+</section>
+{% endblock %}

@@ -43,15 +43,15 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-l">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-l">
                             L
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-l" class="panel-collapse collapse in">
+                      <div id="basic-l" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>LAGUARDA TRÍAS, ROLANDO, A.:</strong> “Afronegrismos rioplatenses” (1969). Tomo XLIX, Cuaderno CLXXXVI -Enero-Abril (1969). Separata del Boletín de la RAE. Madrid</div>
-                            <a href="fuentes/vocabularios-africanos/laguardatrias.pdf" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="fuentes/vocabularios-africanos/laguardatrias.pdf" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>                                                                       
                       </div>
                     </div>

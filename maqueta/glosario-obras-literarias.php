@@ -43,12 +43,12 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#basic" href="#basic-a">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#basic" href="#basic-a">
                             A
                           </a>
                         </h3>
                       </div>
-                      <div id="basic-a" class="panel-collapse collapse in">
+                      <div id="basic-a" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>ACEVEDO DÍAZ, EDUARDO:</strong> Nativa [1890]. Aclaración de las voces locales usadas en esta obra, para la mejor inteligencia de los lectores extraños al país</div>
                             <a href="fuentes/glosario/Glosario_Nativa.pdf" target="blank" class="waves-effect waves-light btn red">descargar pdf</a>
@@ -56,17 +56,17 @@
                         <hr>
                         <div class="panel-body">
                             <div><strong>ASCASUBI, Hilario:</strong> Aniceto Gallo: gacetero y gauchipoeta argentino [1872]</div>
-                            <a href="http://www.cervantesvirtual.com/obra/aniceto-el-gallo-gacetero-prosista-y-gauchipoeta-argentino--0/" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="http://www.cervantesvirtual.com/obra/aniceto-el-gallo-gacetero-prosista-y-gauchipoeta-argentino--0/" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>
                         <hr>
                         <div class="panel-body">
                             <div><strong>ASCASUBI, Hilario:</strong> Paulino Lucero o Los gauchos del Río de la Plata cantando y combatiendo contra los tiranos de la República Argentina y oriental del Uruguay (1839 a 1851) [1872]</div>
-                            <a href="http://www.cervantesvirtual.com/obra/paulino-lucero-o-los-gauchos-del-rio-de-la-plata-cantando-y-combatiendo-contra-los-tiranos-de-la-republica-argentina-y-oriental-del-uruguay-1839-a-1851--0/" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="http://www.cervantesvirtual.com/obra/paulino-lucero-o-los-gauchos-del-rio-de-la-plata-cantando-y-combatiendo-contra-los-tiranos-de-la-republica-argentina-y-oriental-del-uruguay-1839-a-1851--0/" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>  
                         <hr>
                         <div class="panel-body">
                             <div><strong>ASCASUBI, Hilario:</strong> Santos Vega o Los mellizos de la flor: rasgos dramáticos de la vida del gaucho en las campañas y praderas de la República Argentina (1778-1808) [1872]</div>
-                            <a href="http://www.cervantesvirtual.com/obra/santos-vega-o-los-mellizos-de-la-flor-rasgos-dramaticos-de-la-vida-del-gaucho-en-las-campanas-y-praderas-de-la-republica-argentina-1778-a-1808--0/" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="http://www.cervantesvirtual.com/obra/santos-vega-o-los-mellizos-de-la-flor-rasgos-dramaticos-de-la-vida-del-gaucho-en-las-campanas-y-praderas-de-la-republica-argentina-1778-a-1808--0/" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>                                                
                       </div>
                     </div>
@@ -84,7 +84,7 @@
                       <div id="basic-e" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div><strong>ECHEVERRÍA, ESTEBAN:</strong> La cautiva [1837]</div>
-                            <a href="http://www.cervantesvirtual.com/obra/la-cautiva-1870/" target="blank" class="waves-effect waves-light btn red">leer artículo</a>
+                            <a href="http://www.cervantesvirtual.com/obra/la-cautiva-1870/" target="blank" class="waves-effect waves-light btn red">leer</a>
                         </div>                       
                       </div>
                     </div>

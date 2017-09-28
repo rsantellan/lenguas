@@ -14,8 +14,13 @@
             {{ form_start(form, {'attr' : { 'role' : 'form'} }) }}    
             <div class="form-group">
                 {{ form_errors(form.name) }}
-                <label for="{{ form.name.vars.id }}">Nombre</label>
+                <label for="{{ form.name.vars.id }}">Nombre Corto</label>
                 {{ form_widget(form.name, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_errors(form.longname) }}
+                <label for="{{ form.longname.vars.id }}">Nombre Largo</label>
+                {{ form_widget(form.longname, {'attr' : {'class' : 'form-control'}}) }}
             </div>
             <div class="form-group">
                 {{ form_errors(form.description) }}

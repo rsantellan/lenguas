@@ -67,11 +67,8 @@
       </trans-unit>
       <trans-unit id="a0df779acf683a653386d078100ce55e" resname="colaboradores_texto">
         <source>colaboradores_texto</source>
-        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Agradecimientos</h2>
-			<p class="section-sub">A los investigadores de la Facultad de Humanidades y Ciencias de la Educación, especialmente, a Adolfo Elizaincín, Marisa Malcuori, Mirta Groppi, por su impulso pionero. A los estudiantes de la Facultad de Humanidades y Ciencias de la Educación y de la Facultad de Información y Comunicación que, a través de su participación en los cursos de Lingüística Histórica, Seminarios, Taller Metodológico, Lengua II han contribuido con su trabajo a ampliar los materiales que contiene esta web.</p>
-			<p class="section-sub">A la Comisión Sectorial de Investigación Científica por su apoyo económico en diversas etapas del trabajo de las últimas décadas así como a la  Swedish Foundation for International Cooperation in Research and Higher Education, y especialmente a Laura Álvarez por su rol fundamental la red de intercambio académico con Suecia y Brasil.</p>
-			<p class="section-sub">A quienes han integrado este grupo de investigación en el marco de proyectos financiados por CSIC: Ariadna Islas, Serrana Caviglia, Marianela Fernández, Ana Clara Polakof, Juan Justino da Rosa, Yamila Montenegro, Cecila Bértola, Amparo Fernández, Macarena González, Soledad Álvarez, Hernán Viera, , Mayte Gorroztorrazo, Gelsi Ausserbauer, Ligia Rospantini.</p>
-			<p class="section-sub">Han colaborado con esta web Cecilia Bértola, Amparo Fernández Guerra, Juan Manuel Fustes, Joaquín Ginés y Yamila Montenegro.</p>]]></target>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Colaboradores</h2>
+                  <p class="section-sub">Han colaborado con esta web Cecilia Bértola, Amparo Fernández Guerra, Juan Manuel Fustes, Joaquín Ginés y Yamila Montenegro.</p>]]></target>
       </trans-unit>
       <trans-unit id="d241c980792841a17ab3147438e4f4cb" resname="monografias_grado_texto">
         <source>monografias_grado_texto</source>
@@ -102,7 +99,7 @@
       </trans-unit>
       <trans-unit id="ee51a9eb6d6b279e5fb5ca33dc59f8ae" resname="publicaciones_descargar_archivo">
         <source>publicaciones_descargar_archivo</source>
-        <target>descargar pdf</target>
+        <target>descargar</target>
       </trans-unit>
       <trans-unit id="e51239f313f77ea28ef636884cb13308" resname="documento_ver_texto_completo">
         <source>documento_ver_texto_completo</source>
@@ -127,11 +124,20 @@
       </trans-unit>
       <trans-unit id="147305dbcd412d1a78b90e8b129cc493" resname="sitios_interes_texto">
         <source>sitios_interes_texto</source>
-        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Sitios de Interés</h2>
-          <p class="section-sub"><a href="http://www.mundoalfal.org/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>ALFAL</a></br></br>
-          <a href="https://proyecto18alfal.wordpress.com/author/proyecto18alfal/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Proyecto Historia del español de América (ALFAL) </a></br></br>
-          <a href="http://www.tycho.iel.unicamp.br/corpus/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Corpus Tycho Brae (portugués) </a></br></br>
-          <a href="http://www.academiadeletras.gub.uy/" target="blank"><i class="fa fa-caret-right" aria-hidden="true" style="margin-right:5px;"></i>Academia Nacional de Letras</a></p>]]></target>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Sitios de Inter&eacute;s</h2>
+
+<p class="section-sub"><a href="http://www.cordiam.org" target="blank">Corpus Diacr&oacute;nico y Diat&oacute;pico del Espa&ntilde;ol de Am&eacute;rica (Cordiam)</a><br />
+<br />
+<a href="http://redea.cordiam.org/" target="blank">Red Tem&aacute;tica de Filolog&iacute;a, Inform&aacute;tica y Espa&ntilde;ol de Am&eacute;rica (REDEA)</a><br />
+<br />
+<a href="http://www.mundoalfal.org/" target="blank">ALFAL</a><br />
+<br />
+<a href="https://proyecto18alfal.wordpress.com/author/proyecto18alfal/" target="blank">Proyecto Historia del espa&ntilde;ol de Am&eacute;rica (ALFAL) </a><br />
+<br />
+<a href="http://www.tycho.iel.unicamp.br/corpus/" target="blank">Corpus Tycho Brahe (portugu&eacute;s) </a><br />
+<br />
+<a href="http://www.academiadeletras.gub.uy/" target="blank">Academia Nacional de Letras</a></p>
+]]></target>
       </trans-unit>
       <trans-unit id="d2496f75690108aec2c6b7eea1190fe3" resname="busquedas_titulo">
         <source>busquedas_titulo</source>
@@ -144,6 +150,21 @@
       <trans-unit id="1c3b38fd41ec7569b48964a9290d00e6" resname="busquedas_titulo_sin_resultado">
         <source>busquedas_titulo_sin_resultado</source>
         <target><![CDATA[No se encontro ning&uacute;n resultado para la busqueda.]]></target>
+      </trans-unit>
+      <trans-unit id="9f1530ebdf21617fe882160d1c108353" resname="agradecimientos_titulo">
+        <source>agradecimientos_titulo</source>
+        <target>Agradecimientos</target>
+      </trans-unit>
+      <trans-unit id="9a4e3c20ba20b41c02102a2fa7cba39d" resname="agradecimientos_texto">
+        <source>agradecimientos_texto</source>
+        <target><![CDATA[<h2 class="section-title text-capitalize section-sub">Agradecimientos</h2>
+                  <p class="section-sub">A los investigadores de la Facultad de Humanidades y Ciencias de la Educación, especialmente, a Adolfo Elizaincín, Marisa Malcuori, Mirta Groppi, por su impulso pionero. A los estudiantes de la Facultad de Humanidades y Ciencias de la Educación y de la Facultad de Información y Comunicación que, a través de su participación en los cursos de Lingüística Histórica, Seminarios, Taller Metodológico, Lengua II han contribuido con su trabajo a ampliar los materiales que contiene esta web.</p>
+                  <p class="section-sub">A la Comisión Sectorial de Investigación Científica por su apoyo económico en diversas etapas del trabajo de las últimas décadas así como a la  Swedish Foundation for International Cooperation in Research and Higher Education, y, especialmente, a Laura Álvarez por su rol fundamental en la red de intercambio académico con Suecia y Brasil.</p>
+                  <p class="section-sub">A quienes han integrado este grupo de investigación en el marco de proyectos financiados por CSIC: Ariadna Islas, Serrana Caviglia, Marianela Fernández, Ana Clara Polakof, Juan Justino da Rosa, Yamila Montenegro, Cecila Bértola, Amparo Fernández, Macarena González, Soledad Álvarez, Hernán Viera, Mayte Gorrostorrazo, Gelsi Ausserbauer, Ligia Rospantini.</p>]]></target>
+      </trans-unit>
+      <trans-unit id="2a99245974fe2e692cb3fc57998f27f9" resname="footer_agradecimientos">
+        <source>footer_agradecimientos</source>
+        <target>AGRADECIMIENTOS</target>
       </trans-unit>
     </body>
   </file>
