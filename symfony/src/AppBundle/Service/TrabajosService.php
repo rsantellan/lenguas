@@ -53,8 +53,8 @@ class TrabajosService
 
     public function doSearch($keyword, $mediaAlbumService = null)
     {
-        $dql = 'select t,c from AppBundle:Trabajo t join t.category c where t.authors like :authors or t.description like :description or t.year like :year order by t.category';
-        $searchWord = '%'.$keyword.'%';
+        $dql = 'select t,c from AppBundle:Trabajo t join t.category c where upper(t.authors) like :authors or upper(t.description) like :description or upper(t.year) like :year order by t.category';
+        $searchWord = '%'.strtoupper($keyword).'%';
         $data = $this->em->createQuery($dql)
                         ->setParameters(['authors' => $searchWord, 'description' => $searchWord, 'year' => $searchWord])
                         ->getResult();
