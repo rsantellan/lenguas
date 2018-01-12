@@ -25,7 +25,7 @@
         </div>
       </div>
     {% endif %}
-  	{% if documentos | length > 1 %}
+  	{% if documentos | length > 0 %}
     <div class="container search_container">
       <div class="mb-80">
           <h3 class="section-title text-capitalize section-sub">Documentos</h3>
@@ -38,7 +38,7 @@
     </div><!-- /.container -->
 	{% endif %}
 
-	{% if trabajos | length > 1 %}
+	{% if trabajos | length > 0 %}
     <div class="container search_container">
       <div class="mb-80">
           <h3 class="section-title text-capitalize section-sub">Trabajos</h3>
