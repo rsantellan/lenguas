@@ -84,7 +84,7 @@ class Role extends SymfonyRole
 
     public function __toString()
     {
-        return $this->getName();
+        return $this->getDescription();
     }
 
     public function getRole()
