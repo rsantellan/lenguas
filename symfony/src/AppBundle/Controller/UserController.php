@@ -41,9 +41,13 @@ class UserController extends Controller
             $newUser->setPlainPassword('historialinguistica');
             $newUser->setEnabled(true);
             $newUser->setRoles($user->getRoles());
+            $token = sha1(uniqid(mt_rand(), true)); // Or whatever you prefer to generate a token
+            $newUser->setConfirmationToken($token);
             $this->get('fos_user.user_manager')->updateUser($newUser, false);
             $this->getDoctrine()->getManager()->flush();
-
+            $mailer = $this->get('fos_user.mailer');
+            $retorno = $mailer->sendConfirmationEmailMessage($newUser);
+            //$this->session->set('fos_user_send_confirmation_email/email', $user->getEmail());
             return $this->redirectToRoute('admin_users_edit', array('id' => $newUser->getId()));
         }
 

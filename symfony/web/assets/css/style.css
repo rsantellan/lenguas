@@ -161,8 +161,8 @@ hr {
     padding: 12px 38px;
 }
 
-p.section-sub{
-    margin-bottom: 30px;
+div.section-sub p{
+    margin-bottom: 30px !important;
     font-size: 18px;
     line-height: 30px;
     font-family: 'Noto Serif', serif;
@@ -916,11 +916,17 @@ thead {
     margin-bottom: 20px !important;
 
 }
-.section-sub {
+div.section-sub p{
+    margin: 0 auto;
+}
+h2.section-sub{
     margin: 0 auto;
 }
 @media (min-width: 992px){
-    .section-sub {
+    div.section-sub p{
+        width: 60%;
+    }
+    h2.section-sub{
         width: 60%;
     }
 }
