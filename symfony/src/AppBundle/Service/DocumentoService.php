@@ -32,8 +32,8 @@ class DocumentoService
 
     public function doSearch($keyword)
     {
-        $dql = 'select d from AppBundle:Documento d where d.title like :title or d.body like :body';
-        $searchWord = '%'.$keyword.'%';
+        $dql = 'select d from AppBundle:Documento d where upper(d.title) like :title or upper(d.body) like :body';
+        $searchWord = '%'.strtoupper($keyword).'%';
 
         return $this->em->createQuery($dql)
                         ->setParameters(['title' => $searchWord, 'body' => $searchWord])
